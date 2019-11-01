@@ -1,0 +1,6 @@
+
+table post 
+
+table comment
+
+table user

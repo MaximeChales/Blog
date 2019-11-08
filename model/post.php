@@ -1,9 +1,10 @@
 <?php 
-class post
+require_once 'model.php';
+class post extends model
 {
       public function getPost() {
-         $db = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '');
-         $data = $db->prepare('select * from post order by date_upd desc');
+     
+         $data = $this->db->prepare('select * from post order by date_upd desc');
           $data->execute();
           $result = $data->fetchAll();
         //echo '<pre>';print_r($result);echo '</pre>';

@@ -7,9 +7,10 @@
 </head>
 <body>
 <h1>Blog de Jean Forteroche</h1>
-    <?php require ('controller/postController.php');?>
-    <?php $controller = new postController();
-    $controller->index();
-    ?>
+
+    <?php require_once ('controller/router.php');?>
+    <?php $router = new router();?>
+    <?php $router->route();?>
+    
 </body>
 </html>

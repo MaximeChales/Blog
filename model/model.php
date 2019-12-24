@@ -12,8 +12,6 @@ class model
        $login = $config ['DataBase'] ['login'];
        $password = $config ['DataBase'] ['password'];
        $this->db = new PDO("mysql:host=$server;dbname=$dbname;charset=utf8", $login, $password);
-        
-  
     }
 }
 

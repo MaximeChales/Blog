@@ -1,2 +1,10 @@
-*{margin: 0;padding: 0;}
-h1{color: navy}
+*{margin: 0;padding: 0;font-family: 'Open Sans', sans-serif;}
+body{background-color:whitesmoke;   }
+h1{color:white; text-align: center;width: 100%; background-color:#337CFF;padding:10px 0 10px 0;}
+.wrap{ display:flex;flex-wrap:wrap;padding-top: 50px;}
+.post-content{display: block; margin: auto;}
+.content{ height:auto;text-decoration:none;margin:auto; margin-bottom:50px;border:1px solid black;width: 23%;}
+.post-content{width:auto; padding:10px; height:auto;}
+.submit{text-decoration:none;background-color:silver;color:black;display:block; margin: 10px 0 10px 7px;padding:10px;border:1px solid black; width:160px;}
+h2 a {text-decoration: none;color:black;}
+h2 {text-decoration:none;  width:auto;padding:15px 0 15px 7px; background-color:lightgrey;margin-top:0px;color:#222222;}

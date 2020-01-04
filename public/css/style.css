@@ -1,10 +1,42 @@
 *{margin: 0;padding: 0;font-family: 'Open Sans', sans-serif;}
-body{background-color:whitesmoke;   }
+
+/*Accueil*/
+.messageaccueil{display: block;margin: auto; padding: 30px 0 30px 0; width: 70%;text-align: center;}
+
+
+/*fin css accueil*/
+body{background-color:whitesmoke;background-image: url();  }
 h1{color:white; text-align: center;width: 100%; background-color:#337CFF;padding:10px 0 10px 0;}
-.wrap{ display:flex;flex-wrap:wrap;padding-top: 50px;}
-.post-content{display: block; margin: auto;}
-.content{ height:auto;text-decoration:none;margin:auto; margin-bottom:50px;border:1px solid black;width: 23%;}
+.wrap{ display: block; width: 99%; margin: auto;}
+.contentposts{width: 99%; display: block; margin: auto;}
+.post-content{display: block;}
+.content{ height:auto;text-decoration:none; margin:30px 0 10px 4.5%;border:1px solid black;width: 27%; display: inline-block;}
 .post-content{width:auto; padding:10px; height:auto;}
-.submit{text-decoration:none;background-color:silver;color:black;display:block; margin: 10px 0 10px 7px;padding:10px;border:1px solid black; width:160px;}
+.submit{text-decoration: none;
+    background-color: silver;
+    color: black;
+    display: block;
+    padding: 10px;
+    border: 1px solid black;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 8px;
+}
+.submit:hover{background-color: white;transition:2s;}
 h2 a {text-decoration: none;color:black;}
-h2 {text-decoration:none;  width:auto;padding:15px 0 15px 7px; background-color:lightgrey;margin-top:0px;color:#222222;}
+
+.content h2 {text-decoration:none;
+ width:auto;
+ padding:15px 0 15px 7px;
+ background-color:lightgrey;
+ margin-top:0px;color:#222222;
+}
+
+.entete{width: 99%;display: block; margin: auto;margin-left: 6.5%;}
+
+@media screen and (max-width: 1200px) {
+    
+    .content{width: 100%; margin: auto;margin-top: 20px;}
+    
+}

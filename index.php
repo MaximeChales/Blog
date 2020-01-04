@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/Projet_auteur/public/css/style.css">
 </head>
 <body>
-<h1>Billet simple pour l'Alaska</h1>
+<h1 class="titre">Billet simple pour l'Alaska</h1>
 
 
 

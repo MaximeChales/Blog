@@ -2,6 +2,7 @@
 <div class="entete"> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </div>
 <br>
 <div class="wrap" >
+    <div class="contentposts">
 
     <?php foreach($list as $post ):?>
 
@@ -16,4 +17,5 @@
         </div>   
 
     <?php endforeach?>
+    </div>
 </div> 

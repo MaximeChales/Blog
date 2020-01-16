@@ -1,5 +1,5 @@
 <br><br>
-<div class="entete"> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </div>
+<div class="entete"><h2> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </h2></div>
 <br>
 <div class="wrap" >
     <div class="contentposts">

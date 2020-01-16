@@ -21,7 +21,7 @@ class postController
     }
     public function view($id){
         $posts = new post();
-        echo $id;
+     
          $list = $posts->getPost($id);
  
           $comment = new comment();

@@ -11,8 +11,14 @@ class router
       
         if (isset ($url[1]) && !empty($url[1])){
           $method = explode ('-',$url [1]);
+          $m = $method[0];
+          if (is_numeric($m)){
+            $control->view($m);         
+          }else{
+            $control->$m();
+          }
+
           
-          $control->view($method [0]);
         }else{
 
        

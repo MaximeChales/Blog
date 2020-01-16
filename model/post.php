@@ -16,7 +16,6 @@ class post extends model
       }
 
       public function getPost($id) {
-       //TODO: recuperer un post 
         $data = $this->db->prepare("select * from post where id = $id");
          $data->execute();
          $result = $data->fetch(PDO::FETCH_ASSOC);

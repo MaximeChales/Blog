@@ -7,7 +7,7 @@ class homeController
     {
         $posts = new post();
         $post = $posts->getLastPost(); 
-     //maxime   $post = $posts->getAllPost();
+    
         
         require('view/home/index.php');   
     

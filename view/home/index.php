@@ -1,3 +1,4 @@
+<?php include_once('./view/menu.php'); ?>
 <div class="wrap">
     <div class="messageaccueil"><h2>Bonjour et bienvenue sur le blog dédié à l'auteur Jean Forteroche et à son prochain roman
         intitulé "Un billet pour l'Alaska".</h2>
@@ -10,7 +11,7 @@
         </div>
     <br>
          <div id="contentaccueil"><?= $post['content']?></div>
-    <a  class="submit" href="/Projet_auteur/post/<?= $post['id']?>" >Lire l'article complet</a>
+    <a  class="submit" href="/post/<?= $post['id']?>" >Lire l'article complet</a>
     
 </div>
 

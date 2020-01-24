@@ -1,3 +1,4 @@
+<?php include_once('./view/menu.php'); ?>
 <br><br>
 <div class="entete"><h2> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </h2></div>
 <br>

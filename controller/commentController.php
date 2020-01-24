@@ -7,5 +7,9 @@ class commentController
     public function save(){
         print_r($_POST);
     }
+    public function report(){
+        echo('report');
+        exit;
 
+    }
 }

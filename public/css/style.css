@@ -131,6 +131,7 @@ font-size: 15px;}
 .commentaires input,textarea{width: 50%;display: block; margin: auto;padding: 15px;}
 .submitcom{ padding: 5px; background-color: lightgrey; margin-bottom: 50px;}
 .commentaires input:last-child{margin-bottom: 30px;}
+.void{height: 50px;}
 
 
 @media screen and (max-width: 1024px) {

@@ -1,3 +1,4 @@
+<?php include_once('./view/menu.php'); ?>
 <div class="wrap">
     <div class="bloctexte">
         <h2 class="titreposteaccueil"><?= $list ['title']?></h2>
@@ -20,7 +21,7 @@
                             le
                             <?= $comment['date_add']?>
                     </div>
-                    <div class="report"><i class="fas fa-exclamation-triangle"></i> <a class="reportlink" href="#">Signaler le comentaire</a></div>
+                    <a class="report" href='#'>Signaler le commentaire</a>
                 </div>
                 
             </div>
@@ -30,7 +31,7 @@
         </div>
         <?php endforeach?>
     <div class="commentaires">
-     <form action="/Projet_auteur/comment/save" method="post">
+     <form action="<?=APP_DIR?>/comment/save" method="post">
 
         <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo" required>
         <br>
@@ -40,3 +41,17 @@
     </form>
     </div>
 </div>
+
+<script>
+$('.report').on('click',function(){
+$.ajax({
+  url: "<?=APP_DIR?>/comment/report",
+  data: {
+    id: 97201
+  },
+  success: function( result ) {
+   alert(result);
+  }
+});
+});
+</script>

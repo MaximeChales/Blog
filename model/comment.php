@@ -10,16 +10,7 @@ class comment extends model
 
   }  
 
-/*faire la fonction pour envoyer les commentaires sur la bdd
-
-$req = $bdd->prepare('INSERT INTO blog_commentaires (id, name, content, title)
-VALUES (:id_billet, :auteur, :commentaire, NOW())');
+/*faire la fonction pour envoyer les commentaires sur la bdd utiliser la methode "post" ?
  
-$req->execute(array(
-    'id_billet'=> $_POST['billet'],
-    'auteur'=> $_POST['auteur'],
-    'commentaire'=> $_POST['commentaire'],
- 
-));*/
-
+*/
 }

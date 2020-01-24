@@ -11,6 +11,5 @@ class comment extends model
   }  
 
 /*faire la fonction pour envoyer les commentaires sur la bdd utiliser la methode "post" ?
- 
 */
 }

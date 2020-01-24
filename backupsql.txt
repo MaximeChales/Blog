@@ -1,0 +1,11 @@
+# création du répertoire de backup et création du backup initial
+mkdir -p pathtobackup
+cd pathtobackup 
+mysqldump -u [chalesm] -p[Heliosteel78!] --skip-extended-insert [chalesm_blog]  [chalesm_blog].sql 
+# initialisation de git
+git init 
+git add [chalesm_blog].sql 
+git commit -m Initial commit backup database 
+# paramétrer le dépôt git distant
+git remote add origin [https://github.com/MaximeChales/Blog]
+git push -u origin --all

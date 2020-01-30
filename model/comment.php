@@ -2,14 +2,16 @@
 require_once 'model.php';
 class comment extends model
 {
-  public function getComments($postid){
+    function getComments($postid){
     $data = $this->db->prepare("select * from comment where post_id = $postid");
     $data->execute();
     $result = $data->fetchAll(PDO::FETCH_ASSOC);
     return $result ;
 
   }  
-
-/*faire la fonction pour envoyer les commentaires sur la bdd utiliser la methode "post" ?
-*/
+  public function reportComment($id){
+    $data = $this->db->prepare("update `comment` set `status` = 1 where `id` = :id ");
+    return $data->execute(array(':id'=>$id)); 
+    
+  }
 }

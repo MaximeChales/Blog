@@ -21,7 +21,7 @@
                             le
                             <?= $comment['date_add']?>
                     </div>
-                    <a class="report" href='#'>Signaler le commentaire</a>
+                    <a class="report" href='#' id="<?= $comment['id']?>">Signaler le commentaire</a>
                 </div>
                 
             </div>
@@ -44,13 +44,14 @@
 
 <script>
 $('.report').on('click',function(){
+    var comment_id = $(this).prop('id');
 $.ajax({
   url: "<?=APP_DIR?>/comment/report",
   data: {
-    id: 97201
+    id: comment_id
   },
   success: function( result ) {
-   alert(result);
+   console.log(result);
   }
 });
 });

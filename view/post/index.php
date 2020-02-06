@@ -9,12 +9,12 @@
 
         <div class="content">
         
-        <h2><a href="/Projet_auteur/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a></h2>
+        <h2><a href="/<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a></h2>
         
         
         <div class="post-content"><?= $post['content']?></div>
 
-        <a  class="submit" href="/Projet_auteur/post/<?= $post['id']?>-<?=$post['decodedtitle']?> " >Lire l'article complet</a>
+        <a  class="submit" href="<?=APP_DIR?>/post/<?= $post['id']?>-<?=$post['decodedtitle']?>" >Lire l'article complet</a>
         </div>   
 
     <?php endforeach?>

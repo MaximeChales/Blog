@@ -19,6 +19,7 @@ class commentController
          $result =  $comment->reportComment($comment_id);
       }
       echo (int)$result;
+      //if ($comment.status() == 1 ){} 
         exit;
     }
 }

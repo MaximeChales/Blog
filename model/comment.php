@@ -12,6 +12,6 @@ class comment extends model
   public function reportComment($id){
     $data = $this->db->prepare("update `comment` set `status` = 1 where `id` = :id ");
     return $data->execute(array(':id'=>$id)); 
-    
   }
+
 }

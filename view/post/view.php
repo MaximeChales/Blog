@@ -22,6 +22,7 @@
                             <?= $comment['date_add']?>
                     </div>
                     <a class="report" href='#' id="<?= $comment['id']?>">Signaler le commentaire</a>
+                   
                 </div>
                 
             </div>
@@ -51,8 +52,10 @@ $.ajax({
     id: comment_id
   },
   success: function( result ) {
-   console.log(result);
+  // console.log(result);   
+  alert('Message signalé avec succès !');
   }
+   
 });
 });
 </script>

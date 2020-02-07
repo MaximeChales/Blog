@@ -11,7 +11,7 @@
         </div>
     <br>
          <div id="contentaccueil"><?= $post['content']?></div>
-    <a  class="submit" href="/post/<?= $post['id']?>" >Lire l'article complet</a>
+    <a  class="submit" href="<?=APP_DIR?>/post/<?= $post['id']?>" >Lire l'article complet</a>
     
 </div>
 

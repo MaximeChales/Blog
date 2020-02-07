@@ -21,8 +21,9 @@
                             le
                             <?= $comment['date_add']?>
                     </div>
-                    <a class="report" href='#' id="<?= $comment['id']?>">Signaler le commentaire</a>
-                   
+                    <?php if($comment['status']==0):?>
+                     <a class="report" href='#' id="<?= $comment['id']?>">Signaler le commentaire</a>
+                <?php endif?>
                 </div>
                 
             </div>
@@ -36,7 +37,7 @@
 
         <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo" required>
         <br>
-        <textarea name="commentaire" id="" cols="30" rows="10" placeholder="Rédigez un commentaire" required></textarea>
+        <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire" required></textarea>
         <br><br>
         <input class="submitcom" type="submit" value="Envoyer votre commentaire" name="submit">
     </form>
@@ -54,6 +55,8 @@ $.ajax({
   success: function( result ) {
   // console.log(result);   
   alert('Message signalé avec succès !');
+  $('#'+comment_id).hide();
+  //TODO: ajouter effet de flou sur le texte
   }
    
 });

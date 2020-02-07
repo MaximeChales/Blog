@@ -9,7 +9,7 @@
 
         <div class="content">
         
-        <h2><a href="/<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a></h2>
+        <h2><a href="<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a></h2>
         
         
         <div class="post-content"><?= $post['content']?></div>

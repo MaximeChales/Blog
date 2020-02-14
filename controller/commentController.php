@@ -1,12 +1,20 @@
 <?php
 require_once 'model/comment.php'; 
+require_once 'model/post.php';
 class commentController
 {
     public function add(){
         require ('view/comment/add.php');
     }
+
     public function save(){
-        print_r($_POST);
+     
+        if(isset($_POST['submit'])){
+          $post = new post();
+          $comment = new comment();
+          $comment->saveComment($_POST['pseudo'],$_POST['commentaire'],$_POST['email'],$_POST['post_id'],$_POST['title']);
+        }
+         header('Location:'.APP_DIR.'/post/'.$_POST['post_id'].'-'.$post->getTitle($_POST['post_id']));
     }
     public function report(){
     $result = false;
@@ -18,8 +26,6 @@ class commentController
           $comment = new comment();
          $result =  $comment->reportComment($comment_id);
       }
-      echo (int)$result;
-      //if ($comment.status() == 1 ){} 
-        exit;
+    
     }
 }

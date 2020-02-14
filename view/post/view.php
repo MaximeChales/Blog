@@ -15,7 +15,7 @@
         <div class="comments">
             <div class="titreetnom">
                 <div class="titreposteaccueil">
-                    <h2><?= $comment['title']?></h2>
+                    <h2 class="commenttitles"><?= $comment['title']?></h2>
                     <div class="auteurcomment"> par
                         <?= $comment['name']?>
                             le
@@ -24,21 +24,29 @@
                     <?php if($comment['status']==0):?>
                      <a class="report" href='#' id="<?= $comment['id']?>">Signaler le commentaire</a>
                 <?php endif?>
+                
                 </div>
                 
             </div>
-            <div class="contentchapter">
-                <?= $comment['content']?>
+            <div class="contentchapter" id="c<?= $comment['id']?>">
+               <div class="contentcomment <?php if($comment['status']==1):?>flouterletext <?php endif?>">
+               <?= $comment['content']?>
+               </div> 
             </div>
         </div>
         <?php endforeach?>
     <div class="commentaires">
      <form action="<?=APP_DIR?>/comment/save" method="post">
 
+       <input class="email" type="mail" placeholder="Entrez votre adresse email" name="email" required>
+        <br>
         <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo" required>
         <br>
+        <input class="titre" type="text" placeholder="Entrez le titre de votre message" name="title" required>
+        <br>
         <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire" required></textarea>
-        <br><br>
+        <br>
+        <input type="text" name="post_id" value="<?=$list['id']?>">
         <input class="submitcom" type="submit" value="Envoyer votre commentaire" name="submit">
     </form>
     </div>
@@ -52,11 +60,12 @@ $.ajax({
   data: {
     id: comment_id
   },
-  success: function( result ) {
-  // console.log(result);   
+  success: function( result ) {  
   alert('Message signalé avec succès !');
   $('#'+comment_id).hide();
-  //TODO: ajouter effet de flou sur le texte
+  $('#c'+comment_id).addClass('flouterletext')
+ 
+
   }
    
 });

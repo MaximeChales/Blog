@@ -2,6 +2,12 @@
 require_once 'model.php';
 class post extends model
 {
+      public function getTitle($id){
+        $data = $this->db->prepare("select title from post where id = $id");
+         $data->execute();
+         $result = $data->fetch(PDO::FETCH_ASSOC);
+         return $result['title'] ;
+      }
       public function getPosts() {
         
          $data = $this->db->prepare("select * from post order by date_add ");
@@ -19,7 +25,7 @@ class post extends model
         $data = $this->db->prepare("select * from post where id = $id");
          $data->execute();
          $result = $data->fetch(PDO::FETCH_ASSOC);
-       //echo '<pre>';print_r($result);echo '</pre>';
+       
          return $result ;
      }
      public function getLastPost(){
@@ -35,5 +41,5 @@ class post extends model
       $result = $data->fetch(PDO::FETCH_ASSOC);
       return $result ;
      }
-     //maxime
+    
 }

@@ -13,5 +13,15 @@ class comment extends model
     $data = $this->db->prepare("update `comment` set `status` = 1 where `id` = :id ");
     return $data->execute(array(':id'=>$id)); 
   }
-
+ public function saveComment($pseudo,$comment,$email,$post_id,$title){
+  $data = $this->db->prepare("insert into `comment` values(null,:email,:date_add,:post_id,:content,:title,0,:name)");
+  return $data->execute(array(
+    ':email'=>$email,
+    'date_add'=>date('Y-m-d H:i:s'),
+    ':post_id'=>$post_id,
+    ':content'=>$comment,
+    ':title'=>$title,
+    ':name'=>$pseudo
+  )); 
+ }
 }

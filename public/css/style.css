@@ -133,7 +133,7 @@ font-size: 15px;}
 .commentaires input:last-child{margin-bottom: 30px;}
 .void{height: 50px;}
 .messagesignale{width: 100%; margin: auto;text-align: end; color: darkred;position: relative;bottom: 20px;}
-
+.flouterletext{color:transparent; text-shadow: 0 0 9px #000;}
 @media screen and (max-width: 1024px) {
 
 

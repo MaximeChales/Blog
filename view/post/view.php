@@ -46,7 +46,7 @@
         <br>
         <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire" required></textarea>
         <br>
-        <input type="text" name="post_id" value="<?=$list['id']?>">
+        <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
         <input class="submitcom" type="submit" value="Envoyer votre commentaire" name="submit">
     </form>
     </div>

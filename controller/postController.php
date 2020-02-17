@@ -21,9 +21,7 @@ class postController
     }
     public function view($id){
         $posts = new post();
-     
          $list = $posts->getPost($id);
- 
           $comment = new comment();
           $comments = $comment->getComments($id);
          require('view/post/view.php');

@@ -1,6 +1,6 @@
 <?php include_once('./view/menu.php'); ?>
 <br><br>
-<div class="entete"><h2> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </h2></div>
+<div class="entete"><h2> Gestion des articles </h2></div>
 <br>
 <div class="wrap" >
     <div class="contentposts">
@@ -9,9 +9,11 @@
 
         <div class="content">
         
-        <h2><a href="<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a></h2>
+        <h2><a href="<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a>
         
-        
+        <a href="<?=APP_DIR?>/index.php?url=post/edit/<?= $post['id']?>">modifier</a>
+        <a href="<?=APP_DIR?>/index.php?url=post/del/<?= $post['id']?>">effacer</a>
+        </h2>
         <div class="post-content"><?= $post['content']?></div>
 
         <a  class="submit" href="<?=APP_DIR?>/post/<?= $post['id']?>-<?=$post['decodedtitle']?>" >Lire l'article complet</a>

@@ -1,4 +1,5 @@
 <?php include_once('./view/menu.php'); ?>
+
 <div class="wrap">
     <div class="bloctexte">
         <h2 class="titreposteaccueil"><?= $list ['title']?></h2>
@@ -35,7 +36,25 @@
             </div>
         </div>
         <?php endforeach?>
-    <div class="commentaires">
+    <div class="commentaires" 
+<?php
+/*
+$msg = $_POST;
+$carac_interdits[] = array('<', '/', '>',';') ; 
+$traitement = 1 ;
+$erreur = 0 ;
+foreach($carac_interdits as $traitement) {
+  
+} // Fin de la boucle
+if($erreur == 0) {
+    return messageEror();
+}
+else{
+ return false;
+}
+*/
+?>>
+    
      <form action="<?=APP_DIR?>/comment/save" method="post">
 
        <input class="email" type="mail" placeholder="Entrez votre adresse email" name="email" required>
@@ -47,7 +66,8 @@
         <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire" required></textarea>
         <br>
         <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
-        <input class="submitcom" type="submit" value="Envoyer votre commentaire" name="submit">
+        <input class="submitcom" type="submit" value="Envoyer le commentaire" name="submit">
+
     </form>
     </div>
 </div>
@@ -71,3 +91,4 @@ $.ajax({
 });
 });
 </script>
+<?php include_once('./view/footer.php'); ?>

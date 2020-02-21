@@ -1,14 +1,37 @@
 *{margin: 0;padding: 0;font-family: 'Open Sans', sans-serif;}
 
 /*Accueil*/
-.messageaccueil{display: block;margin: auto; padding: 30px 0 30px 0; width: 70%;text-align: center;}
-.lastpost{display: block;margin: auto;width: 50%;border: 1px solid black;}
+.entete{
+    text-align: center;
+    font-size: 15px;
+    display: block;
+    margin: auto;
+    width: 100%;    }
+    h2{color:  #4d4d4d;}
+.bio h2{color: rgb(77, 77, 77);}
+.titleandlog{display: flex; flex-direction: row;background-color: #26619c}
+.titleandlog i{color: white; position: relative; top:20px; right: 20px;}
+.blocaccueil{background-image: url("https://images.unsplash.com/photo-1525220964737-6c299398493c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+background-position: center;
+background-size: cover;
+height: 650px;
+border-bottom: 2px solid #4d4d4d;
+width: 100%;
+margin: auto;
+}
+.messageaccueil{display: block;margin: auto; padding: 30px 0 30px 0; width: 70%;text-align: center;color: white;}
+.lastpost{display: block;margin: auto;width: 50%;padding-bottom: 5px;
+background-color: hsla(360, 100%, 100%, 0.74);}
 .lastpost .submit {width: 50%;margin-top: 50px;}
 .titreposteaccueil{text-decoration:none;
     width:auto;
     padding:15px 0 15px 7px;
-    background-color:lightgrey;
-    margin-top:0px;color:#222222;}
+    background-color:#26619c;
+    margin-top:0px;
+    color:white;
+    border-bottom: 1px solid #4d4d4d;
+}
+    
 #contentaccueil{
     padding: 10px;
 }    
@@ -18,7 +41,7 @@
 
 /*menu*/
 
-#menu{width: 100%;  background-color:#337CFF;}
+#menu{width: 100%;  background-color:#26619c;}
 
 #menu ul {
     margin:0;
@@ -33,18 +56,18 @@
     float:left;
     margin:auto;
     padding:0;
-      background-color:#337CFF;
+      background-color:#26619c;
     width: 100%;
     z-index: 2;
     }
    #menu li a {
     display:block;
- 
     color:white;
     text-decoration:none;
-    padding:20px 0 20px 10px;
-    margin: auto;
-    }
+    padding:20px 0 20px 20px;
+    margin: auto;   
+}
+
    #menu li a:hover {
     color:#FFD700;
     }
@@ -71,26 +94,27 @@
 
 /*fin css accueil*/
 .contentchapter{
+background-color: white;
     padding: 15px;
 }
 /*articles*/
-.bloctexte{width: 50%; display: block; margin: auto; border: 2px solid black;margin-top: 20px; }
+.bloctexte{width: 50%; display: block; margin: auto; background-color: white;margin-top: 20px; }
 body{background-color:whitesmoke;background-image: url();  }
-h1{color:white; text-align: center;width: 100%; background-color:#337CFF;padding:10px 0 10px 0;}
+h1{color:white; text-align: center;width: 100%; background-color:#26619c;padding:40px 0 ;}
 .wrap{ display: block; width: 99%; margin: auto;}
 .contentposts{width: 99%; display: flex;flex-direction: row; flex-wrap: wrap;}
 .post-content{display: block;width:auto; padding:10px; height:auto;}
 .content{ height:auto;
     text-decoration:none; margin:30px 0 10px 4.5%;
-    border:1px solid black;
+    background-color: white;
     width: 27%; display: flex;
     flex-direction: column;}
 .post-content{width:auto; 
     padding:10px; 
     height:auto;}
 .submit{text-decoration: none;
-    background-color: silver;
-    color: black;
+    background-color: #26619c;
+    color: white;
     display: block;
     padding: 10px;
     border: 1px solid black;
@@ -100,55 +124,173 @@ h1{color:white; text-align: center;width: 100%; background-color:#337CFF;padding
     margin-bottom: 8px;
 }
 .submit:hover{
-    background-color: white;
+    background-color: #26619c;
+    color:white;
     transition:2s;}
 
 h2 a {text-decoration: none;
-    color:black;}
+    color:#4d4d4d;}
 
 .content h2 {text-decoration:none;
  width:auto;
  padding:15px 0 15px 7px;
- background-color:lightgrey;
- margin-top:0px;color:#222222;
+ background-color:#26619c;
+ margin-top:0px;
+ color:white;
 }
 
-.entete{width: 100%; 
-text-align: center;
-font-size: 15px;}
+.content a {
+    color:white;
+}
+
 
 
 
 /*comments*/
 
-.comments{ display: block; width: 70%; margin: auto; border: 1px solid black; margin-bottom: 60px;}
+.comments{ display: block; width: 70%; margin: auto; margin-bottom: 60px;}
 .auteurcomment{ font-size: 13px;}
 .report{display: flex; position: relative; bottom: 35px;width:99%; flex-direction: column; text-align: right;}
-.comments .titreposteaccueil{padding:5px 7px 0px 7px}
-.report{text-decoration: none; color: darkred; width: 20%;position: relative;left: 80%;}
+.comments .titreposteaccueil{padding:5px 7px px 7px; color: white;}
+.report{text-decoration: none; color: white; width: 20%;position: relative;left: 79%;}
 .report i{display: none;}
 .commentaires{width: 70%; display: block; margin: auto;}
 .commentaires input,textarea{width: 50%;display: block; padding: 15px;}
 .submitcom{ padding: 5px; background-color: lightgrey; margin-bottom: 50px;}
 .commentaires input:last-child{margin-bottom: 30px;}
 .void{height: 50px;}
-.messagesignale{width: 100%; margin: auto;text-align: end; color: darkred;position: relative;bottom: 20px;}
-.flouterletext{color:transparent; text-shadow: 0 0 9px #000;}
+.flouterletext{color:transparent; text-shadow: 0 0 9px #4d4d4d;}
 .inputid{visibility: hidden;}
+.comments h2{color: white;} 
+.blocaccueil h2{color: white;} 
 /**Page Login**/
 
 .bloclogin{
-    width: 40%;
-    border: 1px solid black;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+   
+    padding-bottom: 25px;
+    padding-top: 25px;
     margin: auto;
+    background-color: white;
+    margin-top: 4%;
 }
 
+.bloclogin h2{
+    color:#4d4d4d;
+    text-align: center;
+}
+
+#jeanlogin {
+    width: 30%;
+    margin-left: 0px;
+}
+
+#bloformlogin{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.bloclogin input[type="text"]{
+    height: 35px;
+    width: 100%;
+    padding-left: 5px;}
+
+    .bloclogin input[type="submit"]{
+        padding:5px 15px 5px 15px;
+        
+    }
 
 
 /* fin page login*/
+
+/**footer*/
+
+.blockfooter{ width: 100%;
+display: block;
+margin: auto;
+background-color: #26619c;
+color: white;
+padding: 25px 0 25px 0;
+margin-top: 4%;}
+
+
+.blockfooter a{color: white;}
+
+.copyright{width: 100%;
+text-align: center;
+margin-bottom: 30px;}
+
+.seclign{display: flex;
+    flex-direction: row;
+    justify-content: space-around;}
+
+.sn{display: flex;
+flex-direction: column;
+width: 15%;}
+
+.blockfooter h2{color: white;}
+
+.logosrs{
+    display: flex;
+    flex-direction: row;
+}
+.plandusite{display: flex;
+flex-direction: column;
+width: 20%;}
+
+.plandusite a{
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.sn a{
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+/*administration*/
+.sidemenu{
+    height: 610px;
+    width: 15%;
+    background-color:#26619c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;padding-left: 5px ;}
+
+   .sidemenu a{
+    text-decoration: none;   
+    color: white;} 
+
+    .sidemenu a:hover{
+
+        color:#FFD700 ;
+    }
+
+    .zonecentre{
+        width: 60%;
+        padding:20px;
+        display: block;
+        margin: auto;
+    }
+
+    .contentadmin{
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+    }
+
 @media screen and (max-width: 1024px) {
 
+    #menu li{
+    
+    width: 100%;
 
+    }
     .wrap{width: 100%;}
     
     /*page accueil*/
@@ -187,6 +329,7 @@ font-size: 15px;}
 
     .comments{
         width: 90%;}
+      
 
     /*commentaires*/
     .report{width: fit-content;
@@ -206,17 +349,40 @@ font-size: 15px;}
 
         .commentaires input:last-child{ width: 50%;}
 
-}
+
 .messagesignale{   
     text-align: start;
     bottom: 0px;}
-@media screen and (max-width: 600px) {
 
+.bloclogin{
+    width: 85%;
+    
+}
 
+#jeanlogin{
+    width: 40%;
+}
+}
+
+@media screen and (max-width: 500px) {
+
+    h1{font-size: 28px;}
     .bio img{width: 50%;} 
     .comments{width: 90%;}
     .commentaires{width:90%;}
     .commentaires input,textarea{width: 100%;}
     .commentaires input:last-child{ width: 70%;}
-
+    #jeanlogin{width: 40%;}
+    .bloclogin{margin-top: 5%; width: 95%;}
+    .plandusite{width: 30%;}
+    .contentadmin{flex-direction: column;}
+    .sidemenu{flex-direction: row;
+        height: 76px;
+        width: 100%;
+        padding-top: 20px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-left: 0px;}
+    .sidemenu a{padding:10px 0 10px 0;width:33.3%;text-align: center;}
+        .zonecentre{width: 95%;padding:5px;padding-top: 15px;}
 }

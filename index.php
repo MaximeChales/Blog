@@ -1,9 +1,6 @@
 <?php 
-
+session_start();
 if(!defined('APP_DIR')){
-
-
-
 
 $site_path = $_SERVER['DOCUMENT_ROOT'];
 $current_path = str_replace('\\','/',__FILE__);

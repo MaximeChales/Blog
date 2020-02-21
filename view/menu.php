@@ -1,5 +1,5 @@
-<h1 class="titre">Billet simple pour l'Alaska</h1> 
-
+<div class="entete">
+<h1 class="titre">Billet simple pour l'Alaska</h1>
 <div id="menu">
 <ul>
 <li><a href="<?=APP_DIR?>/index.php">Accueil</a></li>
@@ -17,4 +17,5 @@
   </ul>
 </li>
 </ul>
+</div>
 </div>

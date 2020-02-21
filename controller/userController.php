@@ -1,5 +1,5 @@
 <?php 
-require_once ('model/user');
+require_once ('model/user.php');
 class userController
 {
   public function login(){
@@ -7,7 +7,8 @@ class userController
   }
   public function check(){
      $url='user/login'; 
-    if(isset($_POST['submit'])){
+
+    if(isset($_POST['connexion'])){
         $user= new user();
         if($user->checkLogin($_POST['login'], $_POST['password'])){
             $url='admin';

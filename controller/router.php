@@ -2,7 +2,6 @@
 class router 
 {
     public function route(){
-     // print_r($_GET);
       if(isset($_GET['url'])){
         $url=explode ('/',$_GET ['url']); 
         $controller = $url[0]."Controller";

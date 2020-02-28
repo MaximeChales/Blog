@@ -31,31 +31,34 @@ class postController
          require('view/post/view.php');
     }
 
-    public function edit($postid){
+    public function edit(){
+        $url = $_GET['url'];
+        $url_split = explode('/',$url);
+        $postid = $url_split[2];
         if(!$_SESSION['is_connected']){
             header('Location:'.APP_DIR);
         }
         $posts = new post();
          $list = $posts->getPost($postid);
+     
          require('view/post/edit.php');
-         //TODO: faire un form sur edit.php (page à creer) + creer function edit_submit (equivalent a check) qui permettra d'enrengistrer les données dans la BDD 
-        //TODO: ajouter un form (casi identique a edit mais contenu vide puisque création d'un new content) 
+        }
+        public function add(){
+            require ('view/post/add.php');
         }
 
-        public function addpost($content,$post_id,$title)
-        {     
-             $result = false;
-              $post_id = 0;
-              if(isset($_POST['id']) && is_numeric($_POST ['$title, $content,$post_id'])){
-                $post_id = $_GET['id'];
-              }
-              if ($post_id){
-                  $post = new post();
-                 $result =  $post->addpost($post_id);
-              }
-            require ('view/post/add.php');
-            require_once 'model/post.php';
-            
+
+        public function addpost()
+        {      
+            $url='user/login';  
+            if (isset($_POST['submit']) && $_SESSION['is_connected']){
+                $post = new post();
+                $post->addPost($_POST['titre'],$_POST['contenu']);
+                $url = 'admin';
+            }
+            header('Location:'.APP_DIR.'/'.$url);      
         }
-}
+
+}//creer editpost (cc) 
+// idem qu'add pour delet post mais virer submit
 

@@ -42,18 +42,15 @@ class post extends model
       return $result ;
      }
 
-     public function addPost(){
-      $data = $this->db->prepare("insert into `posts` values(null,:title,:date_add,:post_id,:content)");
+     public function addPost($title,$content){ 
+      $data = $this->db->prepare("insert into `post` values(null,1,:title,:content,:date_add,:date_upd)");
       return $data->execute(array(
         ':title'=>$title,
-        'date_add'=>date('Y-m-d H:i:s'),
-        ':post_id'=>$post_id,
+        ':date_add'=>date('Y-m-d H:i:s'),
         ':content'=>$content,
+        ':date_upd'=>date('Y-m-d H:i:s')
       ));
-      $data->execute();
-      $result = $data->fetch(PDO::FETCH_ASSOC);
-      return $result ;
      }
-     
+     //TODO CC add (besoin postid)
     
 }

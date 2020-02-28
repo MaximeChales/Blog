@@ -1,11 +1,7 @@
+<?php include_once('./view/menu.php'); ?>
 <div class="contentadmin">
-<div class="sidemenu">
-<a href="<?= APP_DIR.'/post/add'?>">Nouvel article</a>
-
-<a href="<?= APP_DIR.'/post'?>">Tous vos articles</a>
-
-<a href="<?= APP_DIR.'/comment'?>">Commentaires</a>
-</div>
+  
+<?php include_once('./view/sidemenu.php') ?>
 
 <div class="zonecentre">
   <div class="wrap">
@@ -26,3 +22,4 @@
   </div>
 </div>
 </div>
+<?php include_once('./view/footer.php'); ?>

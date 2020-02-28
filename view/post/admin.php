@@ -10,9 +10,10 @@
         <div class="content">
         
         <h2><a href="<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a>
-        
-        <a href="<?=APP_DIR?>/index.php?url=post/edit/<?= $post['id']?>">modifier</a>
-        <a href="<?=APP_DIR?>/index.php?url=post/del/<?= $post['id']?>">effacer</a>
+        <div class="options">
+        <a href="<?=APP_DIR?>/index.php?url=post/edit/<?= $post['id']?>"><i class="fas fa-pen"></i></a>
+        <a href="<?=APP_DIR?>/index.php?url=post/del/<?= $post['id']?>"><i class="far fa-trash-alt"></i></a>
+        </div>
         </h2>
         <div class="post-content"><?= $post['content']?></div>
 

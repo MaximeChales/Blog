@@ -3,10 +3,10 @@ require_once 'model.php';
 class comment extends model
 {
     function getComments($postid){
-    $data = $this->db->prepare("select * from comment where post_id = $postid");
-    $data->execute();
+    $data = $this->db->prepare("select * from comment where post_id = :postid");
+    $data->execute([':postid'=>$postid]);
     $result = $data->fetchAll(PDO::FETCH_ASSOC);
-    return $result ;
+    return $result;
 
   }  
   public function reportComment($id){

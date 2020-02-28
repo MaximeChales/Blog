@@ -3,8 +3,8 @@ require_once 'model.php';
 class post extends model
 {
       public function getTitle($id){
-        $data = $this->db->prepare("select title from post where id = $id");
-         $data->execute();
+        $data = $this->db->prepare("select title from post where id = :id");
+         $data->execute([':id'=>$id]);
          $result = $data->fetch(PDO::FETCH_ASSOC);
          return $result['title'] ;
       }
@@ -22,8 +22,8 @@ class post extends model
       }
 
       public function getPost($id) {
-        $data = $this->db->prepare("select * from post where id = $id");
-         $data->execute();
+        $data = $this->db->prepare("select * from post where id = :id");
+         $data->execute([':id'=>$id]);
          $result = $data->fetch(PDO::FETCH_ASSOC);
        
          return $result ;
@@ -41,5 +41,19 @@ class post extends model
       $result = $data->fetch(PDO::FETCH_ASSOC);
       return $result ;
      }
+
+     public function addPost(){
+      $data = $this->db->prepare("insert into `posts` values(null,:title,:date_add,:post_id,:content)");
+      return $data->execute(array(
+        ':title'=>$title,
+        'date_add'=>date('Y-m-d H:i:s'),
+        ':post_id'=>$post_id,
+        ':content'=>$content,
+      ));
+      $data->execute();
+      $result = $data->fetch(PDO::FETCH_ASSOC);
+      return $result ;
+     }
+     
     
 }

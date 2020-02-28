@@ -38,21 +38,6 @@
         <?php endforeach?>
     <div class="commentaires" 
 <?php
-/*
-$msg = $_POST;
-$carac_interdits[] = array('<', '/', '>',';') ; 
-$traitement = 1 ;
-$erreur = 0 ;
-foreach($carac_interdits as $traitement) {
-  
-} // Fin de la boucle
-if($erreur == 0) {
-    return messageEror();
-}
-else{
- return false;
-}
-*/
 ?>>
     
      <form action="<?=APP_DIR?>/comment/save" method="post">

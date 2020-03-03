@@ -11,8 +11,9 @@
         
         <h2><a href="<?=APP_DIR?>/index.php?url=post/<?= $post['id']?>" target="_blank"><?= $post['title']?></a>
         <div class="options">
-        <a href="<?=APP_DIR?>/index.php?url=post/edit/<?= $post['id']?>"><i class="fas fa-pen"></i></a>
-        <a href="<?=APP_DIR?>/index.php?url=post/del/<?= $post['id']?>"><i class="far fa-trash-alt"></i></a>
+        <a class="editer" href="<?=APP_DIR?>/post/edit/<?= $post['id']?>"><i class="fas fa-pen"></i></a>
+        &nbsp;&nbsp;
+        <a class="supprimer" href="<?=APP_DIR?>/post/deletePost/<?= $post['id']?>"><i class="far fa-trash-alt"></i></a>
         </div>
         </h2>
         <div class="post-content"><?= $post['content']?></div>
@@ -23,4 +24,4 @@
     <?php endforeach?>
     </div>
 </div> 
-<?php include_once('./view/footer.php'); ?>
+<?php include_once('./view/footer.php'); ?> 

@@ -48,17 +48,34 @@ class postController
         }
 
 
-        public function addpost()
+        public function addPost()
         {      
-            $url='user/login';  
+            $url='post';  
             if (isset($_POST['submit']) && $_SESSION['is_connected']){
                 $post = new post();
                 $post->addPost($_POST['titre'],$_POST['contenu']);
-                $url = 'admin';
+                $url = 'post';
             }
             header('Location:'.APP_DIR.'/'.$url);      
         }
 
-}//creer editpost (cc) 
+
+        public function deletePost(){
+
+            $redirect = 'post';
+    
+            $url = $_GET['url'];
+            $url_split = explode('/',$url);
+            $postid = $url_split[2];
+            if($_SESSION['is_connected']){
+                    $posts = new post();
+                    $list = $posts->deletePost($postid);
+                    $redirct = 'admin';
+            }
+            header('Location: '.APP_DIR.'/'.$redirect);
+    }
+
+}
+//creer editpost (cc) 
 // idem qu'add pour delet post mais virer submit
 

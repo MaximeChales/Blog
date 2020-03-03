@@ -21,7 +21,7 @@
 <div class="wrap">
     <div class="bio">
       <h2>Biographie</h2>
-      <img src="./public/img/jean.png" alt="Jean Forteroche" Legend="Jean Forteroche">
+      <img src="./public/img/jean.png" alt="Jean Forteroche">
 
       <div class="biojean">
 

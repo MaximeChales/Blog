@@ -6,7 +6,7 @@
     <form action="<?= APP_DIR.'/user/check'?>" method="post">
         <input type="text" placeholder="Votre Identifiant" required name="login">
         <br><br>
-        <input type="password" placeholder="Votre Mot de Passe"required name="password">
+        <input type="password" placeholder="Votre Mot de Passe" required name="password">
         <br><br>
       
         <br><br>    

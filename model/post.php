@@ -52,5 +52,14 @@ class post extends model
       ));
      }
      //TODO CC add (besoin postid)
+
+     public function deletePost($id){ 
+      $data = $this->db->prepare("delete from `post` WHERE id = :id");
+      return $data->execute(array(
+        ':id'=>$id,
+
+      ));
+     }
+
     
 }

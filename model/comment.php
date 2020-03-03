@@ -24,4 +24,5 @@ class comment extends model
     ':name'=>$pseudo
   )); 
  }
+ 
 }

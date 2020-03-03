@@ -42,7 +42,7 @@
     
      <form action="<?=APP_DIR?>/comment/save" method="post">
 
-       <input class="email" type="mail" placeholder="Entrez votre adresse email" name="email" required>
+       <input class="email" type="email" placeholder="Entrez votre adresse email" name="email" required>
         <br>
         <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo" required>
         <br>

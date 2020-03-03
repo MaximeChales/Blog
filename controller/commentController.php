@@ -28,4 +28,28 @@ class commentController
       }
     
     }
+
+    public function getComments($url = null) 
+    {
+      $post = new post();
+       if (isset ($url [1]) && !empty ($url [1])) {
+        $list = $comment->getComments($url [1]);
+
+         $comment = new comment();
+         $comments = $comment->getComments($url [1]);
+        require('view/post/view.php');
+       }
+       else{
+        $list = $comments->getcomments();
+        if($_SESSION['is_connected'] == true){
+            require('view/post/admin.php');  
+        }else{
+         require('view/post/');   
+        }
+       }
+    
+    }
+
+
+
 }

@@ -29,18 +29,18 @@ class commentController
     
     }
 
-    public function getComments($url = null) 
+    public function getAllComments() 
     {
       $post = new post();
        if (isset ($url [1]) && !empty ($url [1])) {
-        $list = $comment->getComments($url [1]);
+        $list = $comment->getAllComments($url [1]);
 
          $comment = new comment();
-         $comments = $comment->getComments($url [1]);
-        require('view/post/view.php');
+         $comments = $comment->getAllComments($url [1]);
+        require('view/post/gestion.php');
        }
        else{
-        $list = $comments->getcomments();
+        $list = $comments->getAllcomments();
         if($_SESSION['is_connected'] == true){
             require('view/post/admin.php');  
         }else{

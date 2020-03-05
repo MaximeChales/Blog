@@ -24,5 +24,13 @@ class comment extends model
     ':name'=>$pseudo
   )); 
  }
+
+ public function getAllComments(){
+  $data = $this->db->prepare("select * from comment order by desc status ");
+  $data->execute();
+  $result = $data->fetch(PDO::FETCH_ASSOC);
+  return $result ;
+ }
+
  
 }

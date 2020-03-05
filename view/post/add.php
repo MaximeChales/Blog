@@ -20,7 +20,7 @@
 $(document).ready(function() { 
   tinymce.init({
   selector: 'textarea#article',
-  add_form_submit_trigger : false,
+  add_form_submit_trigger : true, /* j'ai changé ça qui était en false de base et ça add bien le titre et le content*/
   height: 300,
   menubar: false,   
   plugins: [

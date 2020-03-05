@@ -1,8 +1,26 @@
-<?php
-function getComments($postid){
-    $data = $this->db->prepare("select * from comment where post_id = :postid");
-    $data->execute([':postid'=>$postid]);
-    $result = $data->fetchAll(PDO::FETCH_ASSOC);
-    return $result;
-
-  }  
+<?php include_once('./view/menu.php'); ?>
+  <div class="wrap">
+        <?php foreach($comments as $comment ):?>
+        <div class="comments">
+            <div class="titreetnom">
+                <div class="titreposteaccueil">
+                <div class="options">
+                  <a class="supprimer" href="<?=APP_DIR?>/post/deletePost/<?= $comment['id']?>"><i class="far fa-trash-alt"></i></a>
+                </div>
+                    <h2 class="commenttitles"><?= $comment['title']?></h2>
+                    <div class="auteurcomment"> par
+                            <?= $comment['name']?>
+                            le
+                            <?= $comment['date_add']?>
+                    </div>
+                </div>
+            </div>
+            <div class="contentchapter" id="c<?= $comment['id']?>">
+               <div class="contentcomment">
+               <?= $comment['content']?>
+               </div> 
+            </div>
+        </div>
+        <?php endforeach?>
+  </div>
+<?php include_once('./view/footer.php'); ?>

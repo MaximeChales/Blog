@@ -10,7 +10,7 @@
     <form action="<?=APP_DIR?>/post/editPost" method="POST">
         <input  type="text" placeholder="Titre de votre article" name="titre" required value="<?= $list['title']?>">
             <br><br>
-            <textarea id="edit" name="article" cols="30" rows="10" placeholder="Rédigez votre article" required ><?= $list['content']?></textarea>
+            <textarea id="edit" name="article" cols="30" rows="10" placeholder="Rédigez votre article"><?= $list['content']?></textarea>
             <br>
             <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
             <input class="submitcom" type="submit" value="Envoyer l'article" name="submit">
@@ -26,7 +26,7 @@
 $(document).ready(function() { 
   tinymce.init({
   selector: 'textarea#edit',
-  add_form_submit_trigger : false,
+  add_form_submit_trigger : true,
   height: 300,
   menubar: false,   
   plugins: [

@@ -43,6 +43,17 @@ class postController
      
          require('view/post/edit.php');
         }
+
+    public function editPost($id,$title,$content){
+        $url='post';  
+        if (isset($_POST['submit']) && $_SESSION['is_connected']){
+            $post = new post();
+            $post->editPost($_POST['titre'],$_POST['contenu']);
+            $url = 'post';
+        }
+        header('Location:'.APP_DIR.'/'.$url);  
+        }
+
         public function add(){
             require ('view/post/add.php');
         }
@@ -54,7 +65,6 @@ class postController
             if (isset($_POST['submit']) && $_SESSION['is_connected']){
                 $post = new post();
                 $post->addPost($_POST['titre'],$_POST['contenu']);
-                $url = 'post';
             }
             header('Location:'.APP_DIR.'/'.$url);      
         }

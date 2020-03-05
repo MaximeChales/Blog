@@ -43,7 +43,7 @@ class post extends model
      }
 
      public function addPost($title,$content){ 
-      $data = $this->db->prepare("insert into `post` values(null,1,:title,:content,:date_add,:date_upd)");
+      $data = $this->db->prepare("insert into `post` values (null,1,:title,:content,:date_add,:date_upd)");
       return $data->execute(array(
         ':title'=>$title,
         ':date_add'=>date('Y-m-d H:i:s'),
@@ -57,7 +57,17 @@ class post extends model
       $data = $this->db->prepare("delete from `post` WHERE id = :id");
       return $data->execute(array(
         ':id'=>$id,
+      ));
+     }
 
+     public function editPost($id,$title,$content){ 
+      $data = $this->db->prepare("update into `post` values (:id,1,:title,:content,:date_add,:date_upd)");
+      return $data->execute(array(
+        ':id'=>$id,
+        ':title'=>$title, 
+        ':date_add'=>date('Y-m-d H:i:s'),
+        ':content'=>$content,
+        ':date_upd'=>date('Y-m-d H:i:s')
       ));
      }
 

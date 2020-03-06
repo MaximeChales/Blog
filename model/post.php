@@ -35,13 +35,6 @@ class post extends model
       return $result ;
      }
 
-     public function getAllPost(){
-      $data = $this->db->prepare("select * from post order by date_upd desc limit 6");
-      $data->execute();
-      $result = $data->fetch(PDO::FETCH_ASSOC);
-      return $result ;
-     }
-
      public function addPost($title,$content){ 
       $data = $this->db->prepare("insert into `post` values (null,1,:title,:content,:date_add,:date_upd)");
       return $data->execute(array(
@@ -61,11 +54,11 @@ class post extends model
      }
 
      public function editPost($id,$title,$content){ 
-      $data = $this->db->prepare("update into `post` values (:id,1,:title,:content,:date_add,:date_upd)");
+      $data = $this->db->prepare("update `post` set title = :title, content = :content, date_upd = :date_upd
+      where id = :id");
       return $data->execute(array(
         ':id'=>$id,
         ':title'=>$title, 
-        ':date_add'=>date('Y-m-d H:i:s'),
         ':content'=>$content,
         ':date_upd'=>date('Y-m-d H:i:s')
       ));

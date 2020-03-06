@@ -3,16 +3,27 @@ require_once 'model.php';
 class user extends model
 {
     public function checkLogin($user, $password){
+
+    /* echo password_hash($password,PASSWORD_DEFAULT,['cost'=>12]);
+        exit;*/
         $_SESSION['is_connected'] = false;
-        $data = $this->db->prepare("select * FROM `user` WHERE `nickname` = :user AND `password` = :password");
-        $data->execute([':user'=>$user,':password'=>$password]);
+        $data = $this->db->prepare("select * FROM `user` WHERE `nickname` = :user");
+        $data->execute([':user'=>$user]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
+
         if($result){
-            $_SESSION['is_connected'] = true;
-           return true;
+            if (password_verify($password,$result['password'])){
+                if (password_needs_rehash($password,PASSWORD_DEFAULT,['cost'=>12])){
+                    $data = $this->db->prepare("update `user` set password = :password WHERE `id` = :id");
+                    $data->execute([':id'=>$result['id'],':password' => password_hash($password,PASSWORD_DEFAULT,['cost'=>12])]);
+                }
+                $_SESSION['is_connected'] = true;
+                return true;    
+            }
+
         }
         return false;
      }
 
-    //TODO: DONE remplacer le $ de  par :comme fait pour user et password convertir les $user en :user (voir execute)
+   
     }

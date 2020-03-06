@@ -25,12 +25,17 @@ class comment extends model
   )); 
  }
 
- public function getAllComments(){
-  $data = $this->db->prepare("select * from comment order by desc status ");
+ public function getReportedComments(){
+  $data = $this->db->prepare("select * from comment where status =1 order by date_add asc");
   $data->execute();
-  $result = $data->fetch(PDO::FETCH_ASSOC);
+  $result = $data->fetchAll(PDO::FETCH_ASSOC);
   return $result ;
  }
 
- 
+ public function deleteComment($id){ 
+  $data = $this->db->prepare("delete from `comment` WHERE id = :id");
+  return $data->execute(array(
+    ':id'=>$id,
+  ));
+ }
 }

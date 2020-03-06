@@ -44,11 +44,12 @@ class postController
          require('view/post/edit.php');
         }
 
-    public function editPost($id,$title,$content){
+    public function editPost(){
         $url='post';  
+
         if (isset($_POST['submit']) && $_SESSION['is_connected']){
             $post = new post();
-            $post->editPost($_POST['titre'],$_POST['contenu']);
+            $post->editPost($_POST['post_id'],$_POST['titre'],$_POST['article']);
             $url = 'post';
         }
         header('Location:'.APP_DIR.'/'.$url);  
@@ -80,7 +81,7 @@ class postController
             if($_SESSION['is_connected']){
                     $posts = new post();
                     $list = $posts->deletePost($postid);
-                    $redirct = 'admin';
+                    $redirect = 'admin';
             }
             header('Location: '.APP_DIR.'/'.$redirect);
     }

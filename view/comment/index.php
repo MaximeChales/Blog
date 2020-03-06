@@ -5,7 +5,7 @@
             <div class="titreetnom">
                 <div class="titreposteaccueil">
                 <div class="options">
-                  <a class="supprimer" href="<?=APP_DIR?>/post/deletePost/<?= $comment['id']?>"><i class="far fa-trash-alt"></i></a>
+                  <a class="supprimer" href="<?=APP_DIR?>/comment/deleteComment/<?= $comment['id']?>"><i class="far fa-trash-alt"></i></a>
                 </div>
                     <h2 class="commenttitles"><?= $comment['title']?></h2>
                     <div class="auteurcomment"> par

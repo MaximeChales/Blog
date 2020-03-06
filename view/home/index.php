@@ -26,10 +26,10 @@
       <div class="biojean">
 
       Jean est né le 15 mai 1965 à Maisons Alfort dans le Val-de Marne où il à vécu jusqu'a ses 22 ans. 
-      Il à suivi des études dans la domotique avant de travailler en temps que Tourneur fraiseur dans une usie d'Issy-les-Moulineaux.
+      Il à suivi des études dans la domotique avant de travailler en temps que tourneur-fraiseur dans une usie d'Issy-les-Moulineaux.
       <br><br>
-      Quand sa grand mère est décédé, il  hérite d'une grande fortune qu'il à décidé d'utiliser pour réaliser son plus grand rève,
-     faire le tour du monde et ecrire des livres pour faire voyager avec lui ses lecteurs. Son prochain récits est en cours de rédaction et
+      Quand sa grand mère est décédée, il  hérite d'une grande fortune qu'il à décidé d'utiliser pour réaliser son plus grand rève,
+     faire le tour du monde et ecrire des livres pour faire voyager avec lui ses lecteurs. Son prochain récit est en cours de rédaction et
       se nomme "Un billet pour l'Alaska" que vous pourrez trouver <a href="/Projet_auteur/post/" > sur cette page</a>.
 
       </div>

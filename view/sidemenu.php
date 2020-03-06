@@ -3,5 +3,5 @@
 <div class="separation"><hr></div>
 <a href="<?= APP_DIR.'/post'?>">Tous vos articles</a>
 <div class="separation"><hr></div>
-<a href="<?= APP_DIR.'/comment/gestion.php'?>">Commentaires</a>
+<a href="<?= APP_DIR.'/comment'?>">Commentaires</a>
 </div>

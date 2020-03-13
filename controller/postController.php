@@ -15,7 +15,7 @@ class postController
        }
        else{
         $list = $posts->getposts();
-        if($_SESSION['is_connected'] == true){
+        if(isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true){
             require('view/post/admin.php');  
         }else{
          require('view/post/index.php');   
@@ -87,6 +87,5 @@ class postController
     }
 
 }
-//creer editpost (cc) 
-// idem qu'add pour delet post mais virer submit
+
 

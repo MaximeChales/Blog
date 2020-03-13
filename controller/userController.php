@@ -3,7 +3,7 @@ require_once ('model/user.php');
 class userController
 {
   public function login(){
-    if($_SESSION['is_connected']){
+    if(isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true){
       header('Location: '.APP_DIR.'/admin');
     }
     require ('view/user/login.php');
@@ -11,11 +11,11 @@ class userController
 
   public function logout(){
     $_SESSION['is_connected'] = false;
-    header('Location: '.APP_DIR.'/admin');
+    header('Location: '.APP_DIR.'/');
   }
 
   public function check(){
-      
+
     $url ='user/login';
     if(isset($_POST['connexion'])){
         $user= new user();

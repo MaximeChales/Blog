@@ -16,22 +16,22 @@
         <div class="comments">
             <div class="titreetnom">
                 <div class="titreposteaccueil">
-                    <h2 class="commenttitles"><?= $comment['title']?></h2>
+                    <h2 class="commenttitles"><?= htmlspecialchars($comment['title'])?></h2>
                     <div class="auteurcomment"> par
-                        <?= $comment['name']?>
+                        <?= htmlspecialchars($comment['name'])?>
                             le
                             <?= $comment['date_add']?>
                     </div>
                     <?php if($comment['status']==0):?>
                      <a class="report" href='#' id="<?= $comment['id']?>">Signaler le commentaire</a>
-                <?php endif?>
+                    <?php endif?>
                 
                 </div>
                 
             </div>
             <div class="contentchapter" id="c<?= $comment['id']?>">
                <div class="contentcomment <?php if($comment['status']==1):?>flouterletext <?php endif?>">
-               <?= $comment['content']?>
+               <?= htmlspecialchars($comment['content'])?>
                </div> 
             </div>
         </div>

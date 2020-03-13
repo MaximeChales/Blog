@@ -26,7 +26,7 @@ class comment extends model
  }
 
  public function getReportedComments(){
-  $data = $this->db->prepare("select * from comment where status =1 order by date_add asc");
+  $data = $this->db->prepare("select * from comment where status =1 order by date_add asc, order by post_id");
   $data->execute();
   $result = $data->fetchAll(PDO::FETCH_ASSOC);
   return $result ;

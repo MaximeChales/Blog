@@ -4,9 +4,9 @@
     <h2>Se connecter</h2>
     <div id="bloformlogin">
     <form action="<?= APP_DIR.'/user/check'?>" method="post">
-        <input type="text" placeholder="Votre Identifiant" required name="login">
+        <input type="text" placeholder="Votre Identifiant" required name="login" <?= htmlspecialchars("")?> >
         <br><br>
-        <input type="password" placeholder="Votre Mot de Passe" required name="password">
+        <input type="password" placeholder="Votre Mot de Passe" required name="password" <?= htmlspecialchars("")?>>
         <br><br>
       
         <br><br>    

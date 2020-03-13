@@ -4,9 +4,10 @@
         <div class="seclign">
             <div class="plandusite">
                 <h2>Plan du site</h2>
-                <a href="<?=APP_DIR?>/index">Accueil</a>
+                <a href="<?=APP_DIR?>">Accueil</a>
                 <a href="<?=APP_DIR?>/post">Tout les chapitres</a>
-                <a href="<?=APP_DIR?>/user/login">Administration</a>
+                <a href="<?=APP_DIR?>/admin">Administration</a>
+                <a  href="<?=APP_DIR?>/user/logout">Se deconnecter</a>
             </div>
             <div class="sn">
                 <h2>Réseaux sociaux:</h2>
@@ -20,3 +21,4 @@
 
     </div>
 </div>
+

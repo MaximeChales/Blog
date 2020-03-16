@@ -1,7 +1,9 @@
-<?php include_once('./view/menu.php');?>
+<?php include_once './view/menu.php';?>
+<!--instalation de Tiny MCE-->
 <script src="https://cdn.tiny.cloud/1/la1xzftsp6554zxi2pbzijdcinms86e70jxbdns1t57rj3v6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <div class="contentadmin">
-<?php include_once('./view/sidemenu.php');?>
+<?php include_once './view/sidemenu.php';?>
+<!--view de la page de création d'articles-->
   <div class="zonecentre">
     <h2>Rédaction d'un nouvel article</h2>
     <br><br>
@@ -14,15 +16,15 @@
       </form>
   </div>
 </div>
-   <?php include_once('./view/footer.php');?>
+   <?php include_once './view/footer.php';?>
 
   <script>
-$(document).ready(function() { 
+$(document).ready(function() {
   tinymce.init({
   selector: 'textarea#article',
-  add_form_submit_trigger : true, /* j'ai changé ça qui était en false de base et ça add bien le titre et le content*/
+  add_form_submit_trigger : true,
   height: 300,
-  menubar: false,   
+  menubar: false,
   plugins: [
     'advlist autolink lists link image charmap print preview anchor',
     'searchreplace visualblocks code fullscreen',

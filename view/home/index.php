@@ -1,4 +1,4 @@
-<?php include_once('./view/menu.php'); ?>
+<?php include_once './view/menu.php';?>
 <div class="blocaccueil">
 <div class="wrap">
     <div class="messageaccueil"><h2>Bonjour et bienvenue sur le blog dédié à l'auteur Jean Forteroche et à son prochain roman
@@ -8,12 +8,12 @@
 
     <div class="lastpost">
         <div class="titreposteaccueil">
-            <h3><?= $post['title']?></h3>
+            <h3><?=$post['title']?></h3>
         </div>
     <br>
-         <div id="contentaccueil"><?= $post['content']?></div>
-    <a  class="submit" href="<?=APP_DIR?>/post/<?= $post['id']?>" >Lire l'article complet</a>
-    
+         <div id="contentaccueil"><?=$post['content']?></div>
+    <a  class="submit" href="<?=APP_DIR?>/post/<?=$post['id']?>" >Lire l'article complet</a>
+
 </div>
 </div>
 </div>
@@ -25,7 +25,7 @@
 
       <div class="biojean">
 
-      Jean est né le 15 mai 1965 à Maisons Alfort dans le Val-de Marne où il à vécu jusqu'a ses 22 ans. 
+      Jean est né le 15 mai 1965 à Maisons Alfort dans le Val-de Marne où il à vécu jusqu'a ses 22 ans.
       Il à suivi des études dans la domotique avant de travailler en temps que tourneur-fraiseur dans une usie d'Issy-les-Moulineaux.
       <br><br>
       Quand sa grand mère est décédée, il  hérite d'une grande fortune qu'il à décidé d'utiliser pour réaliser son plus grand rève,
@@ -35,5 +35,5 @@
       </div>
 
     </div>
-</div>  
-<?php include_once('./view/footer.php'); ?>
+</div>
+<?php include_once './view/footer.php';?>

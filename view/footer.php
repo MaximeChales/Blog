@@ -1,4 +1,5 @@
 <div class="blockfooter">
+ <!--footer avec differents liens du site et les résaux sociaux de Jean Forteroche. -->
     <div class="wrap">
         <div class="copyright"> Création du site par <a href="https://mchales.alwaysdata.net/" target="blank">©Maxime CHALES </a> - 2020. Tous droits réservés</div>
         <div class="seclign">
@@ -7,7 +8,10 @@
                 <a href="<?=APP_DIR?>">Accueil</a>
                 <a href="<?=APP_DIR?>/post">Tout les chapitres</a>
                 <a href="<?=APP_DIR?>/admin">Administration</a>
+                 <!--le bouton de deconnexion n'apparait que si on est connécté. (le code verifie que is connected existe et si il est vrai.) -->
+                <?php if (isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true): ?>
                 <a  href="<?=APP_DIR?>/user/logout">Se deconnecter</a>
+                <?php endif?>
             </div>
             <div class="sn">
                 <h2>Réseaux sociaux:</h2>
@@ -18,7 +22,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

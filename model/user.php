@@ -2,28 +2,30 @@
 require_once 'model.php';
 class user extends model
 {
-    public function checkLogin($user, $password){
+    public function checkLogin($user, $password)
+    {
 
-    /* echo password_hash($password,PASSWORD_DEFAULT,['cost'=>12]);
+        /* Cryptage du MDP  
+
+        echo password_hash($password,PASSWORD_DEFAULT,['cost'=>12]);
         exit;*/
         $_SESSION['is_connected'] = false;
         $data = $this->db->prepare("select * FROM `user` WHERE `nickname` = :user");
-        $data->execute([':user'=>$user]);
+        $data->execute([':user' => $user]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
 
-        if($result){
-            if (password_verify($password,$result['password'])){
-                if (password_needs_rehash($password,PASSWORD_DEFAULT,['cost'=>12])){
+        if ($result) {
+            if (password_verify($password, $result['password'])) {
+                if (password_needs_rehash($password, PASSWORD_DEFAULT, ['cost' => 12])) {
                     $data = $this->db->prepare("update `user` set password = :password WHERE `id` = :id");
-                    $data->execute([':id'=>$result['id'],':password' => password_hash($password,PASSWORD_DEFAULT,['cost'=>12])]);
+                    $data->execute([':id' => $result['id'], ':password' => password_hash($password, PASSWORD_DEFAULT, ['cost' => 12])]);
                 }
                 $_SESSION['is_connected'] = true;
-                return true;    
+                return true;
             }
 
         }
         return false;
-     }
-
-   
     }
+
+}

@@ -1,6 +1,6 @@
 <?php include_once './view/menu.php';?>
 <!--instalation de Tiny MCE-->
-<script src="https://cdn.tiny.cloud/1/la1xzftsp6554zxi2pbzijdcinms86e70jxbdns1t57rj3v6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/opu4jj54o6rpalgywhl7rjize163cy8mmxh4eumwbsph8lt7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <!--View de l'édition de posts-->
 <div class="contentadmin">
     <?php include_once './view/sidemenu.php';?>

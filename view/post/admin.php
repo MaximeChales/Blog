@@ -11,7 +11,7 @@
 
         <div class="content">
 
-        <h2><a href="<?=APP_DIR?>/index.php?url=post/<?=$post['id']?>" target="_blank"><?=$post['title']?></a>
+        <h2><a href="<?=APP_DIR?>/post/<?=$post['id']?>-<?=$post['decodedtitle']?>" target="_blank"><?=$post['title']?></a>
         <div class="options">
         <a class="editer" href="<?=APP_DIR?>/post/edit/<?=$post['id']?>"><i class="fas fa-pen"></i></a>
         &nbsp;&nbsp;

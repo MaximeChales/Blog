@@ -111,7 +111,9 @@ h1{color:white; text-align: center;width: 100%; background-color:#26619c;padding
     flex-direction: column;}
 .post-content{width:auto; 
     padding:10px; 
-    height:auto;}
+    height:auto;
+display: flex;
+flex-direction: column;}
 .submit{text-decoration: none;
     background-color: #26619c;
     color: white;

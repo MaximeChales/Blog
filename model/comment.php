@@ -45,7 +45,7 @@ class comment extends model
         /**
          * récupere les commentaires signalés dans l'ordre croissant de publications
          */
-        $data = $this->db->prepare("select * from comment where status =1 order by date_add asc");
+        $data = $this->db->prepare("select * from comment where status = 1 order by date_add asc");
         $data->execute();
         $result = $data->fetchAll(PDO::FETCH_ASSOC);
         return $result;

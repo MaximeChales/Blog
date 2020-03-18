@@ -84,7 +84,7 @@ class postController
         if ($_SESSION['is_connected']) {
             $posts = new post();
             $list = $posts->deletePost($postid);
-            $redirect = 'admin';
+            $redirect = 'post';
         }
         header('Location: ' . APP_DIR . '/' . $redirect);
     }

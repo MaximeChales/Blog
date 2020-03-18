@@ -26,7 +26,7 @@ class post extends model
 
     public function getPost($id)
     {
-           //récupération des postes dans la BDD maisindividuellement cette fois
+           //récupération des postes dans la BDD mais individuellement cette fois
         $data = $this->db->prepare("select * from post where id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);

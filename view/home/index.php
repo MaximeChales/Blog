@@ -30,7 +30,7 @@
       <br><br>
       Quand sa grand mère est décédée, il  hérite d'une grande fortune qu'il à décidé d'utiliser pour réaliser son plus grand rève,
      faire le tour du monde et ecrire des livres pour faire voyager avec lui ses lecteurs. Son prochain récit est en cours de rédaction et
-      se nomme "Un billet pour l'Alaska" que vous pourrez trouver <a href="/Projet_auteur/post/" > sur cette page</a>.
+      se nomme "Un billet pour l'Alaska" que vous pourrez trouver <a href="<?=APP_DIR?>/post/" > sur cette page</a>.
 
       </div>
 

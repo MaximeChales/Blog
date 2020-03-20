@@ -23,6 +23,9 @@ class postController
         }
 
     }
+    /**
+     * On récupere le post en fonction de son id ainsi que les commentaires qui y sont associés
+     */
     public function view($id)
     {
         $posts = new post();
@@ -34,6 +37,10 @@ class postController
 
     public function edit()
     {
+        /**
+         * je récuper l'id du post: si je sui spas admin, je renvoi la personne sur la page d'accueil.
+         *  sinon je charge le poste correspondant à l'id
+         */
         $url = $_GET['url'];
         $url_split = explode('/', $url);
         $postid = $url_split[2];

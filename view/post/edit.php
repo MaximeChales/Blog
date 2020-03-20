@@ -18,7 +18,7 @@
     </div>
     </div>
     <?php include_once './view/footer.php';
-//TODO form action à remplir (suivre ex add mais avec edit)
+
 ?>
 </div>
 

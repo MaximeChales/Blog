@@ -51,7 +51,9 @@ class commentController
         }
 
     }
-
+ /**
+  * report
+  */
     public function getAllComments()
     {
         $post = new post();
@@ -60,7 +62,7 @@ class commentController
 
             $comment = new comment();
             $comments = $comment->getAllComments($url[1]);
-            require 'view/post/gestion.php';
+
         } else {
             $list = $comments->getReportedComments();
             if ($_SESSION['is_connected'] == true) {

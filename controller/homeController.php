@@ -6,6 +6,8 @@ class homeController
     public function index() 
     {
         $posts = new post();
+        /**appel de la fonction lastpost pour l'affichage de la page d'accueil
+         */
         $post = $posts->getLastPost(); 
     
         

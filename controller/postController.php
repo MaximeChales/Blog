@@ -38,7 +38,7 @@ class postController
     public function edit()
     {
         /**
-         * je récuper l'id du post: si je sui spas admin, je renvoi la personne sur la page d'accueil.
+         * je récupère l'id du post: si je suis pas admin, je renvoie la personne sur la page d'accueil.
          *  sinon je charge le poste correspondant à l'id
          */
         $url = $_GET['url'];

@@ -52,7 +52,7 @@ class commentController
 
     }
  /**
-  * report
+  * recuperation des commentaires signalés:
   */
     public function getAllComments()
     {
@@ -73,6 +73,10 @@ class commentController
         }
 
     }
+
+  /**
+  * supression des commentaires signalés:
+  */
 
     public function deleteComment()
     {

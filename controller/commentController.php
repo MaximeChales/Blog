@@ -6,7 +6,7 @@ class commentController
 {
 
 /**
- *recuperation des comments
+ *Appel à la fonction getReportedComments() qui sert à recuperer dles comments qui ont étés signalés
  */
 
     public function index()
@@ -16,8 +16,8 @@ class commentController
         require 'view/comment/index.php';
     }
 
-    /**
- *ajout des comments
+ /**
+ * précise qu'il nous faut add.php pour l'ajout des comments
  */
 
     public function add()

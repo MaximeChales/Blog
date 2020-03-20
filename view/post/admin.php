@@ -5,7 +5,7 @@
 <div class="wrap" >
     <div class="contentposts">
 
-    <!-- On liste ici tous les posts existtants avec un foreach on ajoute les options pour éditer et supprimer les commntaires-->
+    <!-- On liste ici tous les posts existants avec un foreach on ajoute les options pour éditer et supprimer les commentaires-->
 
     <?php foreach ($list as $post): ?>
 

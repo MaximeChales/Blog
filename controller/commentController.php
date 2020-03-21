@@ -33,7 +33,15 @@ class commentController
         if (isset($_POST['submit'])) {
             $post = new post();
             $comment = new comment();
-            $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']);
+            //On verifie que les inputs ne sont pas vides avant d'envoyer le commentaire à la BDD.
+            if(!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['title'])&& !empty($_POST['commentaire']) && !empty($_POST['post_id'])){
+                 $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']); 
+             }
+
+             
+            
+                
+           //TODO creer un message d'erreur en cas d'input vides
         }
         header('Location:' . APP_DIR . '/post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
     }

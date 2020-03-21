@@ -8,8 +8,6 @@
             <?=$list['content']?>
         </div>
     </div>
-    <br>
-    <br>
 
 
     <!-- On affiche ensuite les commentaires correspondant au post avec le titre l'auteur la date d'écriture et le contenu du commentaire
@@ -39,21 +37,22 @@
             </div>
         </div>
         <?php endforeach?>
-    <div class="commentaires"
-<?php
-?>>
+
+       
+    <div class="commentaires">
+     <h2>Donnez nous votre avis sur cet article</h2>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
      <form action="<?=APP_DIR?>/comment/save" method="post">
 
-       <input class="email" type="email" placeholder="Entrez votre adresse email" name="email" required>
-        <br>
-        <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo" required>
-        <br>
-        <input class="titre" type="text" placeholder="Entrez le titre de votre message" name="title" required>
-        <br>
-        <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire" required></textarea>
-        <br>
+       <input class="email" type="email" placeholder="Entrez votre adresse email" name="email">
+        
+        <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo">
+       
+        <input class="titre" type="text" placeholder="Entrez le titre de votre message" name="title">
+      
+        <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire"></textarea>
+      
         <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
         <input class="submitcom" type="submit" value="Envoyer le commentaire" name="submit">
 

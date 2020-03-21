@@ -10,7 +10,6 @@
         <div class="titreposteaccueil">
             <h3><?=$post['title']?></h3>
         </div>
-    <br>
          <div id="contentaccueil"><?=$post['content']?></div>
     <a  class="submit" href="<?=APP_DIR?>/post/<?=$post['id']?>" >Lire l'article complet</a>
 

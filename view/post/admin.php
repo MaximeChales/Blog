@@ -1,7 +1,7 @@
 <?php include_once './view/menu.php';?>
-<br><br>
-<div class="entete"><h2> Gestion des articles </h2></div>
-<br>
+
+<div class="enteteadmin"><h2> Gestion des articles </h2></div>
+
 <div class="wrap" >
     <div class="contentposts">
 

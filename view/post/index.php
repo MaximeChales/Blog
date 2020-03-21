@@ -1,7 +1,6 @@
 <?php include_once './view/menu.php';?>
-<br><br>
-<div class="entete"><h2> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </h2></div>
-<br>
+<div class="enteteviewpost"><h2> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </h2></div>
+
 <div class="wrap" >
     <div class="contentposts">
     <!--View de tous les posts du site. On récupère leurs titre, leurs contenu ainsiq que leurs id.

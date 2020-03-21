@@ -6,7 +6,7 @@
     font-size: 15px;
     display: block;
     margin: auto;
-    width: 100%;    }
+    width: 100%; }
     h2{color:  #4d4d4d;}
 .bio h2{color: rgb(77, 77, 77);}
 .titleandlog{display: flex; flex-direction: row;background-color: #26619c}
@@ -87,8 +87,14 @@ background-color: hsla(360, 100%, 100%, 0.74);}
 /*bio*/
 .bio h2{text-align: center; margin-bottom: 20px;}
 .bio{margin-top: 50px;}
-.bio img{width: 20%;display: block; margin: auto;}
-.biojean{width: 45%; display: block; margin: auto; padding: 30px 0 50px 0;}
+.bio img{width: 20%;
+         display: block;
+        margin: auto;}
+
+.biojean{width: 45%; 
+        display: block;
+        margin: auto;
+        padding: 30px 0 50px 0;}
 
 /* fin bio*/
 
@@ -98,12 +104,22 @@ background-color: white;
     padding: 15px;
 }
 /*articles*/
-.bloctexte{width: 50%; display: block; margin: auto; background-color: white;margin-top: 20px; }
+.bloctexte{width: 50%;
+    display: block;
+     margin: auto; background-color: white;
+     margin-top: 50px;
+    margin-bottom: 50px; }
 body{background-color:whitesmoke;background-image: url();  }
 h1{color:white; text-align: center;width: 100%; background-color:#26619c;padding:40px 0 ;}
 .wrap{ display: block; width: 99%; margin: auto;}
-.contentposts{width: 99%; display: flex;flex-direction: row; flex-wrap: wrap;padding-bottom:50px;}
+.contentposts{width:100%; display: flex;flex-direction: row; flex-wrap: wrap;padding-bottom:50px;}
 .post-content{display: flex;width:auto; padding:10px; height:auto;}
+.enteteviewpost{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
 .content{ height:auto;
     text-decoration:none; margin:30px 0 10px 4.5%;
     background-color: white;
@@ -151,13 +167,14 @@ h2 a {text-decoration: none;
 /*comments*/
 
 .comments{ display: block; width: 70%; margin: auto; margin-bottom: 60px;}
+.commentaires h2{margin-bottom: 20px;}
 .auteurcomment{ font-size: 13px;}
 .report{display: flex; position: relative; bottom: 35px;width:99%; flex-direction: column; text-align: right;}
 .comments .titreposteaccueil{padding:5px 7px px 7px; color: white;}
 .report{text-decoration: none; color: white; width: 20%;position: relative;left: 79%;}
 .report i{display: none;}
 .commentaires{width: 70%; display: block; margin: auto;}
-.commentaires input,textarea{width: 50%;display: block; padding: 15px;}
+.commentaires input,textarea{resize:none;width: 50%;display: block; padding: 15px; margin-bottom: 20px;}
 .submitcom{ padding: 5px; background-color: lightgrey; margin-bottom: 50px;}
 .commentaires input:last-child{margin-bottom: 30px;}
 .void{height: 50px;}
@@ -197,6 +214,21 @@ h2 a {text-decoration: none;
     padding-top: 20px;
 }
 
+#bloformlogin form{
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#bloformlogin input{
+
+    margin-bottom: 20px;
+    width: 250px;
+
+}
+
 .bloclogin input[type="text"]{
     height: 35px;
     width: 100%;
@@ -209,7 +241,7 @@ h2 a {text-decoration: none;
 
     .bloclogin input[type="submit"]{
         padding:5px 15px 5px 15px;
-        
+        margin:auto;
     }
     
 
@@ -297,6 +329,11 @@ width: 20%;}
     .content h2{display: flex; flex-direction: row; justify-content: space-between;}
 
 
+    .enteteadmin{
+
+        margin: 35px 0 25px 0;
+        text-align: center;
+    }
 
     .separation{width: 80%;
     margin: 0 auto;}
@@ -305,8 +342,23 @@ width: 20%;}
 
     /*add*/
 
+    .addpostform{
+
+        margin-top: 20px;
+    }
+
     .zonecentre input[type="text"]{
         padding:10px 0 10px 5px; 
+}
+
+.addpostform input{
+
+    margin-bottom: 20px;
+}
+
+.zonecentre input[type='submit']{
+
+    margin-top: 20px;
 }
 
     .tox-tinymce{
@@ -359,9 +411,10 @@ width: 20%;}
     .content{width: 90%; 
         display:block;
         margin: auto;
-        margin-top: 20px;}
+        margin-top: 30px;
+        border: 1px solid;}
 
-    .submit{width: 50%;
+    .submit{
         margin-top: 20px;}
 
 
@@ -420,7 +473,8 @@ width: 20%;}
 .separation{display: none;}
 
 .zonecentre{padding-top: 20px;
-padding-bottom: 20px;}
+padding-bottom: 20px;
+}
 }
 
 
@@ -436,10 +490,16 @@ padding-bottom: 20px;}
     .commentaires input:last-child{ width: 70%;}
     #jeanlogin{width: 40%;}
     .bloclogin{margin-top: 5%; width: 95%;}
-    .plandusite{width: 50%;}
+    .plandusite{width: 40%;}
   .zonecentre{width: 95%;padding:5px;padding-top: 15px;}
   .sn{width: max-content;}
   .logosrs{display: block;
-    margin: auto;}
+    text-align: end;
+   }
     .copyright{font-size: 15px;}
+    .content{margin-bottom: 30px;}
+    .secligne{
+        font-size: 15px;
+        justify-content: space-between;
+    }
 }

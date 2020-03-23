@@ -1,9 +1,9 @@
 <?php
-class router
+class Router
 {
     public function route()
     {
-        
+
         if (isset($_GET['url'])) {
             $url = explode('/', $_GET['url']);
             $controller = $url[0] . "Controller";
@@ -14,9 +14,8 @@ class router
              * On vérifie dans l'url que l'on a bien récuperer l'id en paramètre.
              * Si oui, alors ...
              */
-             //TODO
-            
-            
+            //TODO
+
             if (isset($url[1]) && !empty($url[1])) {
                 $method = explode('-', $url[1]);
                 $m = $method[0];

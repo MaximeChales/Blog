@@ -2,7 +2,7 @@
 require_once 'model/comment.php';
 require_once 'model/post.php';
 
-class commentController
+class CommentController
 {
 
 /**
@@ -16,17 +16,17 @@ class commentController
         require 'view/comment/index.php';
     }
 
- /**
- * précise qu'il nous faut add.php pour l'ajout des comments
- */
+    /**
+     * précise qu'il nous faut add.php pour l'ajout des comments
+     */
 
     public function add()
     {
         require 'view/comment/add.php';
     }
- /**
- *sauvegarde des comments dans la BDD
- */
+    /**
+     *sauvegarde des comments dans la BDD
+     */
     public function save()
     {
 
@@ -34,14 +34,11 @@ class commentController
             $post = new post();
             $comment = new comment();
             //On verifie que les inputs ne sont pas vides avant d'envoyer le commentaire à la BDD.
-            if(!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['title'])&& !empty($_POST['commentaire']) && !empty($_POST['post_id'])){
-                 $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']); 
-             }
+            if (!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['title']) && !empty($_POST['commentaire']) && !empty($_POST['post_id'])) {
+                $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']);
+            }
 
-             
-            
-                
-           //TODO creer un message d'erreur en cas d'input vides
+            //TODO creer un message d'erreur en cas d'input vides
         }
         header('Location:' . APP_DIR . '/post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
     }
@@ -59,9 +56,9 @@ class commentController
         }
 
     }
- /**
-  * recuperation des commentaires signalés:
-  */
+    /**
+     * recuperation des commentaires signalés:
+     */
     public function getAllComments()
     {
         $post = new post();
@@ -82,9 +79,9 @@ class commentController
 
     }
 
-  /**
-  * supression des commentaires signalés:
-  */
+    /**
+     * supression des commentaires signalés:
+     */
 
     public function deleteComment()
     {

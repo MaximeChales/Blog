@@ -1,11 +1,11 @@
 <?php
 require_once 'model.php';
-class user extends model
+class User extends Model
 {
     public function checkLogin($user, $password)
     {
 
-        /* Cryptage du MDP  
+        /* Cryptage du MDP
 
         echo password_hash($password,PASSWORD_DEFAULT,['cost'=>12]);
         exit;*/
@@ -16,7 +16,7 @@ class user extends model
         $result = $data->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
-           // utilisation de BCRYPT et plus principalement PASSWORD_DEFAULT pour hacher et crypter le MDP.
+            // utilisation de BCRYPT et plus principalement PASSWORD_DEFAULT pour hacher et crypter le MDP.
             if (password_verify($password, $result['password'])) {
                 if (password_needs_rehash($password, PASSWORD_DEFAULT, ['cost' => 12])) {
                     $data = $this->db->prepare("update `user` set password = :password WHERE `id` = :id");
@@ -25,7 +25,6 @@ class user extends model
                 $_SESSION['is_connected'] = true;
                 return true;
             }
-
         }
         return false;
     }

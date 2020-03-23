@@ -6,12 +6,12 @@
 <!--view de la page de création d'articles-->
   <div class="zonecentre">
     <h2>Rédaction d'un nouvel article</h2>
-  
+
       <form action="<?=APP_DIR?>/post/addPost" method="POST" class="addpostform">
       <input  type="text" placeholder="Titre de votre article" name="titre" required>
-         
+
           <textarea id="article" name="contenu" cols="30" rows="10" placeholder="Rédigez votre article"></textarea>
-         
+
           <input class="submitcom" type="submit" value="Publier l'article" name="submit">
       </form>
   </div>

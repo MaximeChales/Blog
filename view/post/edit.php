@@ -6,12 +6,12 @@
     <?php include_once './view/sidemenu.php';?>
     <div class="zonecentre">
        <h2>Editer un article</h2>
-     
+
     <form  class="addpostform" action="<?=APP_DIR?>/post/editPost" method="POST">
         <input  type="text" placeholder="Titre de votre article" name="titre" required value="<?=$list['title']?>">
-            
+
             <textarea id="edit" name="article" cols="30" rows="10" placeholder="Rédigez votre article"><?=$list['content']?></textarea>
-       
+
             <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
             <input class="submitcom" type="submit" value="Envoyer l'article" name="submit">
         </form>

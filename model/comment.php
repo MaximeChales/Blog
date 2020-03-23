@@ -1,10 +1,10 @@
 <?php
 require_once 'model.php';
-class comment extends model
+class Comment extends Model
 {
 
     /**
-     * recuperation des commentaires en fonction de leurs postid 
+     * recuperation des commentaires en fonction de leurs postid
      */
     public function getComments($postid)
     {

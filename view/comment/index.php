@@ -1,11 +1,11 @@
 <?php include_once './view/menu.php';?>
 <div class="enteteadmin"><h2> Gestion des commentaires </h2></div>
 <div class="contentreportedcomments">
-    
+
   <div class="wrap">
          <!-- view de la page de gestion des articles -->
 
-         
+
 
         <?php foreach ($comments as $comment): ?>
         <div class="comments">

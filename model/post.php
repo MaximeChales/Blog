@@ -1,6 +1,6 @@
 <?php
 require_once 'model.php';
-class post extends model
+class Post extends Model
 {
     //récupération des titres dans la BDD
     public function getTitle($id)
@@ -12,7 +12,7 @@ class post extends model
     }
     public function getPosts()
     {
-   //récupération de tous les postes dans la BDD
+        //récupération de tous les postes dans la BDD
         $data = $this->db->prepare("select * from post order by date_add ");
 
         $data->execute();
@@ -26,7 +26,7 @@ class post extends model
 
     public function getPost($id)
     {
-           //récupération des postes dans la BDD mais individuellement cette fois
+        //récupération des postes dans la BDD mais individuellement cette fois
         $data = $this->db->prepare("select * from post where id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
@@ -54,7 +54,6 @@ class post extends model
         ));
     }
 
-
     public function deletePost($id)
     {
         //Supprime les données associés à un id dans la table post de la bdd
@@ -66,7 +65,7 @@ class post extends model
 
     public function editPost($id, $title, $content)
     {
-         //Modifie les données associés à un id dans la table post de la bdd
+        //Modifie les données associés à un id dans la table post de la bdd
         $data = $this->db->prepare("update `post` set title = :title, content = :content, date_upd = :date_upd
       where id = :id");
         return $data->execute(array(

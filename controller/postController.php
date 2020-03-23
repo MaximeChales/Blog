@@ -1,15 +1,18 @@
 <?php
 require 'model/post.php';
 require 'model/comment.php';
-class postController
+class PostController
 {
 
     public function index($url = null)
     {
+        //TODO faire confirmer par PS
+        //On instancie l'objet post
         $posts = new post();
         if (isset($url[1]) && !empty($url[1])) {
             $list = $posts->getPost($url[1]);
 
+            //On instancie l'objet comment
             $comment = new comment();
             $comments = $comment->getComments($url[1]);
             require 'view/post/view.php';

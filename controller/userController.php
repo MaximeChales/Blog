@@ -1,6 +1,7 @@
 <?php
+//On charge le fichier user.php pour pouvoir récuperer la classe model et son extend: user
 require_once 'model/user.php';
-class userController
+class UserController
 {
 
     //Si "$_SESSION['is_connected']" extiste et est vrai alors ça mene vers la page admin. sinon ça ammène sur la page de login
@@ -12,8 +13,7 @@ class userController
         require 'view/user/login.php';
     }
 
-
-    //Passe "$_SESSION['is_connected']" en false pour déconnecter 
+    //Passe "$_SESSION['is_connected']" en false pour déconnecter
     public function logout()
     {
         $_SESSION['is_connected'] = false;

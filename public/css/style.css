@@ -179,7 +179,7 @@ h2 a {text-decoration: none;
 .commentaires input:last-child{margin-bottom: 30px;}
 .void{height: 50px;}
 .flouterletext{color:transparent; text-shadow: 0 0 9px #4d4d4d;}
-.inputid{visibility: hidden;}
+
 .comments h2{color: white;} 
 .blocaccueil h2{color: white;} 
 /**Page Login**/
@@ -221,6 +221,7 @@ h2 a {text-decoration: none;
 }
 
 
+.inputid{visibility: hidden; height: 1px ;}
 
 #bloformlogin input{
 

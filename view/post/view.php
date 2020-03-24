@@ -45,7 +45,7 @@
 
      <form action="<?=APP_DIR?>/comment/save" method="post">
 
-       <input class="email" type="email" placeholder="Entrez votre adresse email" name="email">
+       <input class="email" type="text" placeholder="Entrez votre adresse email" name="email">
 
         <input class="pseudo" type="text" placeholder="Entrez votre pseudo" name="pseudo">
 

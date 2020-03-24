@@ -6,14 +6,22 @@ class CommentController
 {
 
 /**
- *Appel à la fonction getReportedComments() qui sert à recuperer dles comments qui ont étés signalés
+ *Appel à la fonction getReportedComments() qui sert à recuperer les comments qui ont étés signalés et redirige vers la 
+ *page des commentaires SI ON
  */
 
     public function index()
     {
         $comment = new comment();
         $comments = $comment->getReportedComments();
+        if ($_SESSION['is_connected']) {
         require 'view/comment/index.php';
+        }
+
+       else{
+           header('Location:' . APP_DIR );
+       }  
+        
     }
 
     /**
@@ -35,8 +43,14 @@ class CommentController
             $comment = new comment();
             //On verifie que les inputs ne sont pas vides avant d'envoyer le commentaire à la BDD.
             if (!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['title']) && !empty($_POST['commentaire']) && !empty($_POST['post_id'])) {
+                $variable = $_POST['email'];
+                if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $variable ) )
+                {
+
+   
                 $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']);
-            }
+            
+            }} 
 
             //TODO creer un message d'erreur en cas d'input vides
         }

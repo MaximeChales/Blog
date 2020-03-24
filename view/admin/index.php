@@ -4,7 +4,7 @@
 <?php include_once './view/sidemenu.php'?>
 
 <div class="zonecentre">
-  <div class="wrap">
+  <section class="wrap">
     <h2>Préface</h2>
     <br>
     Bienvenue sur la partie administration de votre site, Monsieur Forteroche.
@@ -19,7 +19,7 @@
     <br><br>
     Si vous avez besoin d'assistance dans l'utilisation de votre site, n'hésitez pas à nous contacter  au 01.02.03.04.05.
 
-  </div>
+  </section >
 </div>
 </div>
 <?php include_once './view/footer.php';?>

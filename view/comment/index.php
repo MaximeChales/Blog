@@ -2,7 +2,7 @@
 <div class="enteteadmin"><h2> Gestion des commentaires </h2></div>
 <div class="contentreportedcomments">
 
-  <div class="wrap">
+  <section  class="wrap">
          <!-- view de la page de gestion des articles -->
 
 
@@ -26,6 +26,6 @@
             </div>
         </div>
         <?php endforeach?>
-  </div>
+  </section >
 </div>
 <?php include_once './view/footer.php';?>

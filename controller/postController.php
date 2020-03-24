@@ -7,8 +7,10 @@ class PostController
     public function index($url = null)
     {
         //TODO faire confirmer par PS
-        //On instancie l'objet post
+        //On instancie la classe post
         $posts = new post();
+        
+        //On verifie que le paramètre exite et qu'il n'est pas vide
         if (isset($url[1]) && !empty($url[1])) {
             $list = $posts->getPost($url[1]);
 
@@ -33,6 +35,9 @@ class PostController
     {
         $posts = new post();
         $list = $posts->getPost($id);
+        if(empty ($list)){
+            header('Location:' . APP_DIR.'/view/404.php');
+        }
         $comment = new comment();
         $comments = $comment->getComments($id);
         require 'view/post/view.php';
@@ -70,6 +75,9 @@ class PostController
 
     public function add()
     {
+        if (!$_SESSION['is_connected']) {
+            header('Location:' . APP_DIR);
+        }
         require 'view/post/add.php';
     }
 

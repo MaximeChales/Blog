@@ -1,6 +1,6 @@
 <?php include_once './view/menu.php';?>
 <div class="blocaccueil">
-<div class="wrap">
+<section  class="wrap">
     <div class="messageaccueil"><h2>Bonjour et bienvenue sur le blog dédié à l'auteur Jean Forteroche et à son prochain roman
         intitulé "Un billet pour l'Alaska".</h2>
     </div>
@@ -13,11 +13,11 @@
          <div id="contentaccueil"><?=$post['content']?></div>
     <a  class="submit" href="<?=APP_DIR?>/post/<?=$post['id']?>" >Lire l'article complet</a>
 
-</div>
+</section >
 </div>
 </div>
 
-<div class="wrap">
+<section class="wrap">
     <div class="bio">
       <h2>Biographie</h2>
       <img src="./public/img/jean.png" alt="Jean Forteroche">
@@ -34,5 +34,5 @@
       </div>
 
     </div>
-</div>
+</section >
 <?php include_once './view/footer.php';?>

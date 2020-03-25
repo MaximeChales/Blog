@@ -1,4 +1,6 @@
 <?php
+//création de la session
+
 session_start();
 if (!defined('APP_DIR')) {
 

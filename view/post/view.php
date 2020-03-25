@@ -43,7 +43,7 @@
      <h2>Donnez nous votre avis sur cet article</h2>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
-     <form action="<?=APP_DIR?>/comment/save" method="post">
+     <form name="comments" action="<?=APP_DIR?>/comment/save" method="post">
 
        <input class="email" type="text" placeholder="Entrez votre adresse email" name="email">
 
@@ -54,8 +54,9 @@
         <textarea name="commentaire" cols="30" rows="10" placeholder="Rédigez un commentaire"></textarea>
 
         <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
-        <input class="submitcom" type="submit" value="Envoyer le commentaire" name="submit">
 
+        <input class="submitcom" type="submit" value="Envoyer le commentaire" name="submit">
+        
     </form>
     </div>
 </div>
@@ -73,11 +74,9 @@ $.ajax({
   alert('Message signalé avec succès !');
   $('#'+comment_id).hide();
   $('#c'+comment_id).addClass('flouterletext')
-
-
   }
-
 });
 });
 </script>
+
 <?php include_once './view/footer.php';?>

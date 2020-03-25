@@ -127,17 +127,6 @@ h2 {
 	color: #FFD700;
 }
 
-#menu ul li ul {
-	display: none;
-}
-
-#menu ul li:hover ul {
-	display: block;
-}
-
-#menu li ul {
-	position: absolute;
-}
 
 
 /*bio*/

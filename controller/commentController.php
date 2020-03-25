@@ -50,7 +50,9 @@ class CommentController
    
                 $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']);
             
-            }} 
+            }
+            
+        } 
 
             //TODO creer un message d'erreur en cas d'input vides
         }
@@ -114,3 +116,6 @@ class CommentController
     }
 
 }
+
+
+

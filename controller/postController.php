@@ -6,15 +6,22 @@ class PostController
 
     public function index($url = null)
     {
-        //TODO faire confirmer par PS
+        
         //On instancie la classe post
         $posts = new post();
-        
-        //On verifie que le paramètre exite et qu'il n'est pas vide
+
+        /**
+         * On verifie que l'id' existe et qu'il n'est pas vide. Dans ce cas,
+         * dans ce cas, on appelle la methode getPosts avec l'id correspondant.
+         */
         if (isset($url[1]) && !empty($url[1])) {
             $list = $posts->getPost($url[1]);
 
-            //On instancie l'objet comment
+            /**
+             * On instancie l'objet comment
+             * On appelle la methode getcomments avec pour paramettre l'id du post
+             * TODO
+             * */
             $comment = new comment();
             $comments = $comment->getComments($url[1]);
             require 'view/post/view.php';
@@ -35,8 +42,8 @@ class PostController
     {
         $posts = new post();
         $list = $posts->getPost($id);
-        if(empty ($list)){
-            header('Location:' . APP_DIR.'/view/404.php');
+        if (empty($list)) {
+            header('Location:' . APP_DIR . '/view/404.php');
         }
         $comment = new comment();
         $comments = $comment->getComments($id);
@@ -56,8 +63,10 @@ class PostController
             header('Location:' . APP_DIR);
         }
         $posts = new post();
-        $list = $posts->getPost($postid);
+        //On instancie la classe post puis, on appelle la methode getPost avec pour parametres post_id.
+        //On précise que l'on a besoin de edit.php (qui est la vue)
 
+        $list = $posts->getPost($postid);
         require 'view/post/edit.php';
     }
 
@@ -67,6 +76,7 @@ class PostController
 
         if (isset($_POST['submit']) && $_SESSION['is_connected']) {
             $post = new post();
+            //On instancie la classe post puis, on appelle la methode editPost avec pour parametres $_POST['post_id'], $_POST['titre'] et $_POST['article'
             $post->editPost($_POST['post_id'], $_POST['titre'], $_POST['article']);
             $url = 'post';
         }
@@ -86,6 +96,7 @@ class PostController
         $url = 'post';
         if (isset($_POST['submit']) && $_SESSION['is_connected']) {
             $post = new post();
+             //On instancie la classe post puis, on appelle la methode addPost avec pour parametres ($_POST['titre'] et $_POST['contenu']
             $post->addPost($_POST['titre'], $_POST['contenu']);
         }
         header('Location:' . APP_DIR . '/' . $url);
@@ -100,6 +111,7 @@ class PostController
         $url_split = explode('/', $url);
         $postid = $url_split[2];
         if ($_SESSION['is_connected']) {
+            //On instancie la classe post puis, on appelle la methode deletePost avec pour parametre postid
             $posts = new post();
             $list = $posts->deletePost($postid);
             $redirect = 'post';

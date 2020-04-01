@@ -1,12 +1,12 @@
 <?php
-require 'model/post.php';
-require 'model/comment.php';
+require APP_DIR . '/model/post.php';
+require APP_DIR . '/model/comment.php';
 class PostController
 {
 
     public function index($url = null)
     {
-        
+
         //On instancie la classe post
         $posts = new post();
 
@@ -24,13 +24,13 @@ class PostController
              * */
             $comment = new comment();
             $comments = $comment->getComments($url[1]);
-            require 'view/post/view.php';
+            require APP_DIR . '/view/post/view.php';
         } else {
             $list = $posts->getposts();
             if (isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true) {
-                require 'view/post/admin.php';
+                require APP_DIR . '/view/post/admin.php';
             } else {
-                require 'view/post/index.php';
+                require APP_DIR . '/view/post/index.php';
             }
         }
 
@@ -47,7 +47,7 @@ class PostController
         }
         $comment = new comment();
         $comments = $comment->getComments($id);
-        require 'view/post/view.php';
+        require APP_DIR . '/view/post/view.php';
     }
 
     public function edit()
@@ -67,7 +67,7 @@ class PostController
         //On précise que l'on a besoin de edit.php (qui est la vue)
 
         $list = $posts->getPost($postid);
-        require 'view/post/edit.php';
+        require APP_DIR . '/view/post/edit.php';
     }
 
     public function editPost()
@@ -86,9 +86,9 @@ class PostController
     public function add()
     {
         if (!$_SESSION['is_connected']) {
-            header('Location:' . APP_DIR);
+            header('Location:' . WWW_DIR);
         }
-        require 'view/post/add.php';
+        require APP_DIR . '/view/post/add.php';
     }
 
     public function addPost()
@@ -96,7 +96,7 @@ class PostController
         $url = 'post';
         if (isset($_POST['submit']) && $_SESSION['is_connected']) {
             $post = new post();
-             //On instancie la classe post puis, on appelle la methode addPost avec pour parametres ($_POST['titre'] et $_POST['contenu']
+            //On instancie la classe post puis, on appelle la methode addPost avec pour parametres ($_POST['titre'] et $_POST['contenu']
             $post->addPost($_POST['titre'], $_POST['contenu']);
         }
         header('Location:' . APP_DIR . '/' . $url);

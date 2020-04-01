@@ -1,4 +1,4 @@
-<?php include_once './view/menu.php';?>
+<?php include_once APP_DIR . '/view/menu.php';?>
 
 <div class="enteteadmin"><h2> Gestion des articles </h2></div>
 
@@ -26,4 +26,4 @@
     <?php endforeach?>
     </div>
 </div>
-<?php include_once './view/footer.php';?>
+<?php include_once APP_DIR . './view/footer.php';?>

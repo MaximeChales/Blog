@@ -1,9 +1,9 @@
-<?php include_once './view/menu.php';?>
+<?php include_once APP_DIR.'/view/menu.php';?>
 <div class="wrap">
 <div class="bloclogin">
     <h2>Se connecter</h2>
     <div id="bloformlogin">
-    <form action="<?=APP_DIR . '/user/check'?>" method="post">
+    <form action="<?=WWW_DIR . 'user/check'?>" method="post">
         <input type="text" placeholder="Votre Identifiant" required name="login" <?=htmlspecialchars("")?> >
 
         <input type="password" placeholder="Votre Mot de Passe" required name="password" <?=htmlspecialchars("")?>>
@@ -13,4 +13,4 @@
 </div>
 </div>
 </div>
-<?php include_once './view/footer.php';?>
+<?php include_once APP_DIR.'/view/footer.php';?>

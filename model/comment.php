@@ -1,5 +1,5 @@
 <?php
-require_once 'model.php';
+require_once APP_DIR.'/model/Model.php';
 class Comment extends Model
 {
 

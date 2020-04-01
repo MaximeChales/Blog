@@ -1,4 +1,4 @@
-<?php include_once './view/menu.php';?>
+<?php include_once APP_DIR. './view/menu.php';?>
 
 <div class="wrap">
 <!-- Un commence par afficher le post avec le titre et le contenu-->
@@ -79,4 +79,4 @@ $.ajax({
 });
 </script>
 
-<?php include_once './view/footer.php';?>
+<?php include_once APP_DIR. './view/footer.php';?>

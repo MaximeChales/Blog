@@ -1,6 +1,6 @@
 <?php
-require_once 'model/comment.php';
-require_once 'model/post.php';
+require_once APP_DIR.'/model/comment.php';
+require_once APP_DIR.'/model/post.php';
 
 class CommentController
 {
@@ -15,11 +15,11 @@ class CommentController
         $comment = new comment();
         $comments = $comment->getReportedComments();
         if ($_SESSION['is_connected']) {
-        require 'view/comment/index.php';
+        require APP_DIR.'/view/comment/index.php';
         }
 
        else{
-           header('Location:' . APP_DIR );
+           header('Location:' . WWW_DIR );
        }  
         
     }
@@ -30,7 +30,7 @@ class CommentController
 
     public function add()
     {
-        require 'view/comment/add.php';
+        require APP_DIR.'/view/comment/add.php';
     }
     /**
      *sauvegarde des comments dans la BDD
@@ -56,7 +56,7 @@ class CommentController
 
             //TODO creer un message d'erreur en cas d'input vides
         }
-        header('Location:' . APP_DIR . '/post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
+        header('Location:' . WWW_DIR . '/post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
     }
 
     public function report()
@@ -87,9 +87,9 @@ class CommentController
         } else {
             $list = $comments->getReportedComments();
             if ($_SESSION['is_connected'] == true) {
-                require 'view/post/admin.php';
+                require APP_DIR.'/view/post/admin.php';
             } else {
-                require 'view/post/';
+                require APP_DIR.'/view/post/';
             }
         }
 
@@ -112,7 +112,7 @@ class CommentController
             $list = $comment->deleteComment($commentid);
             $redirect = 'comment';
         }
-        header('Location: ' . APP_DIR . '/' . $redirect);
+        header('Location: ' . WWW_DIR . '/' . $redirect);
     }
 
 }

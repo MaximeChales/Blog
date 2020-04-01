@@ -1,6 +1,6 @@
 <?php
 //On charge le fichier user.php pour pouvoir récuperer la classe model et son extend: user
-require_once 'model/user.php';
+require_once APP_DIR.'/model/user.php';
 class UserController
 {
 
@@ -8,16 +8,16 @@ class UserController
     public function login()
     {
         if (isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true) {
-            header('Location: ' . APP_DIR . '/admin');
+            header('Location: ' . WWW_DIR . '/admin');
         }
-        require 'view/user/login.php';
+        require APP_DIR.'/view/user/login.php';
     }
 
     //Passe "$_SESSION['is_connected']" en false pour déconnecter
     public function logout()
     {
         $_SESSION['is_connected'] = false;
-        header('Location: ' . APP_DIR . '/');
+        header('Location: ' . WWW_DIR . '/');
     }
 
     public function check()
@@ -30,6 +30,6 @@ class UserController
                 $url = 'admin';
             }
         }
-        header('Location:' . APP_DIR . '/' . $url);
+        header('Location:' . WWW_DIR . '/' . $url);
     }
 }

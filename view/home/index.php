@@ -1,4 +1,4 @@
-<?php include_once './view/menu.php';?>
+<?php include_once APP_DIR.'/view/menu.php';?>
 <div class="blocaccueil">
 <section  class="wrap">
     <div class="messageaccueil"><h2>Bonjour et bienvenue sur le blog dédié à l'auteur Jean Forteroche et à son prochain roman
@@ -29,10 +29,10 @@
       <br><br>
       Quand sa grand mère est décédée, il  hérite d'une grande fortune qu'il à décidé d'utiliser pour réaliser son plus grand rève,
      faire le tour du monde et ecrire des livres pour faire voyager avec lui ses lecteurs. Son prochain récit est en cours de rédaction et
-      se nomme "Un billet pour l'Alaska" que vous pourrez trouver <a href="<?=APP_DIR?>/post/" > sur cette page</a>.
+      se nomme "Un billet pour l'Alaska" que vous pourrez trouver <a href="<?=WWW_DIR?>post/" > sur cette page</a>.
 
       </div>
 
     </div>
 </section >
-<?php include_once './view/footer.php';?>
+<?php include_once APP_DIR.'/view/footer.php';?>

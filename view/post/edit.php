@@ -1,9 +1,9 @@
-<?php include_once './view/menu.php';?>
+<?php include_once APP_DIR.'./view/menu.php';?>
 <!--instalation de Tiny MCE-->
 <script src="https://cdn.tiny.cloud/1/opu4jj54o6rpalgywhl7rjize163cy8mmxh4eumwbsph8lt7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <!--View de l'édition de posts-->
 <div class="contentadmin">
-    <?php include_once './view/sidemenu.php';?>
+    <?php include_once APP_DIR.'./view/sidemenu.php';?>
     <div class="zonecentre">
        <h2>Editer un article</h2>
 
@@ -17,7 +17,7 @@
         </form>
     </div>
     </div>
-    <?php include_once './view/footer.php';
+    <?php include_once APP_DIR.'./view/footer.php';
 
 ?>
 </div>

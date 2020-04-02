@@ -17,6 +17,6 @@
     <nav id="menu">
     <ul>
       <li><a href="<?=WWW_DIR?>">Accueil</a></li>
-      <li><a href="<?=WWW_DIR?>Post/">Tous les chapitres</a>
+      <li><a href="<?=WWW_DIR?>Post">Tous les chapitres</a>
 </nav>
 </div>

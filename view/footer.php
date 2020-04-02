@@ -10,7 +10,7 @@
                 <a href="<?=WWW_DIR?>admin">Administration</a>
                  <!--le bouton de deconnexion n'apparait que si on est connécté. (le code verifie que is connected existe et si il est vrai.) -->
                 <?php if (isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true): ?>
-                <a  href="<?=WWW_DIR?>/user/logout">Se deconnecter</a>
+                <a  href="<?=WWW_DIR?>user/logout">Se deconnecter</a>
                 <?php endif?>
             </div>
             <div class="sn">

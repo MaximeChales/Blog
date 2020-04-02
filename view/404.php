@@ -1,12 +1,12 @@
 
-<?php include_once 'menu.php';?>
+<?php include_once APP_DIR.'menu.php';?>
 <section class="wrap">
 
     
     La page que vous cherchez est introuvable !
 
-    <a href="./index.php">Revenir à l'accueil</a>
+    <a href="<?php WWW_DIR?>"index.php">Revenir à l'accueil</a>
 
 </section>
 
-<?php include_once 'footer.php';?>
+<?php include_once APP_DIR.'footer.php';?>

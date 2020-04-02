@@ -8,7 +8,7 @@ class UserController
     public function login()
     {
         if (isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true) {
-            header('Location: ' . WWW_DIR . '/admin');
+            header('Location: ' . WWW_DIR . 'admin');
         }
         require APP_DIR.'/view/user/login.php';
     }
@@ -17,7 +17,7 @@ class UserController
     public function logout()
     {
         $_SESSION['is_connected'] = false;
-        header('Location: ' . WWW_DIR . '/');
+        header('Location: ' . WWW_DIR);
     }
 
     public function check()
@@ -30,6 +30,6 @@ class UserController
                 $url = 'admin';
             }
         }
-        header('Location:' . WWW_DIR . '/' . $url);
+        header('Location:' . WWW_DIR . $url);
     }
 }

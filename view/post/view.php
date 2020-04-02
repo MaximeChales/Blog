@@ -24,7 +24,7 @@
                             <?=$comment['date_add']?>
                     </div>
                     <?php if ($comment['status'] == 0): ?>
-                     <a class="report" href='#' id="<?=$comment['id']?>">Signaler le commentaire</a>
+                     <a class="report" href="#" id="<?=$comment['id']?>">Signaler le commentaire</a>
                     <?php endif?>
 
                 </div>
@@ -43,7 +43,7 @@
      <h2>Donnez nous votre avis sur cet article</h2>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
-     <form name="comments" action="<?=APP_DIR?>/comment/save" method="post">
+     <form name="comments" action="<?=WWW_DIR?>comment/save" method="post">
 
        <input class="email" type="text" placeholder="Entrez votre adresse email" name="email">
 

@@ -80,7 +80,7 @@ class PostController
             $post->editPost($_POST['post_id'], $_POST['titre'], $_POST['article']);
             $url = 'post';
         }
-        header('Location:' . APP_DIR . '/' . $url);
+        header('Location:' . WWW_DIR . '/' . $url);
     }
 
     public function add()
@@ -93,14 +93,16 @@ class PostController
 
     public function addPost()
     {
+
         $url = 'post';
         if (isset($_POST['submit']) && $_SESSION['is_connected']) {
             $post = new post();
             //On instancie la classe post puis, on appelle la methode addPost avec pour parametres ($_POST['titre'] et $_POST['contenu']
             $post->addPost($_POST['titre'], $_POST['contenu']);
         }
-        header('Location:' . APP_DIR . '/' . $url);
-    }
+        header('Location:' . WWW_DIR . '/' . $url);
+    } 
+ 
 
     public function deletePost()
     {
@@ -116,7 +118,7 @@ class PostController
             $list = $posts->deletePost($postid);
             $redirect = 'post';
         }
-        header('Location: ' . APP_DIR . '/' . $redirect);
+        header('Location: ' . WWW_DIR  . $redirect);
     }
 
 }

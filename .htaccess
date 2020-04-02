@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On    
     RewriteRule public/css/(.*)  public/css/$1 [QSA,L]
+    RewriteRule public/js/(.*)  public/js/$1 [QSA,L]
     RewriteRule public/img/(.*)  public/img/$1 [QSA,L]
     RewriteRule (.*)  public/index.php?url=$1 [QSA,L]
 </IfModule>

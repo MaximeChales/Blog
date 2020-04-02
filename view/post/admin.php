@@ -11,16 +11,16 @@
 
         <div class="content">
 
-        <h2><a href="<?=APP_DIR?>/post/<?=$post['id']?>-<?=$post['decodedtitle']?>" target="_blank"><?=$post['title']?></a>
+        <h2><a href="<?=WWW_DIR?>post/<?=$post['id']?>-<?=$post['decodedtitle']?>" target="_blank"><?=$post['title']?></a>
         <div class="options">
-        <a class="editer" href="<?=APP_DIR?>/post/edit/<?=$post['id']?>"><i class="fas fa-pen"></i></a>
+        <a class="editer" href="<?=WWW_DIR?>post/edit/<?=$post['id']?>"><i class="fas fa-pen"></i></a>
         &nbsp;&nbsp;
-        <a class="supprimer" href="<?=APP_DIR?>/post/deletePost/<?=$post['id']?>"><i class="far fa-trash-alt"></i></a>
+        <a class="supprimer" href="<?=WWW_DIR?>post/deletePost/<?=$post['id']?>"><i class="far fa-trash-alt"></i></a>
         </div>
         </h2>
         <div class="post-content"><?=$post['content']?></div>
 
-        <a  class="submit" href="<?=APP_DIR?>/post/<?=$post['id']?>-<?=$post['decodedtitle']?>" >Lire l'article complet</a>
+        <a  class="submit" href="<?=WWW_DIR?>post/<?=$post['id']?>-<?=$post['decodedtitle']?>" >Lire l'article complet</a>
         </div>
 
     <?php endforeach?>

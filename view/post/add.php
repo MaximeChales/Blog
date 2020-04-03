@@ -1,7 +1,7 @@
 <?php include_once APP_DIR . '/view/menu.php';?>
 <!--instalation de Tiny MCE-->
 <script src="https://cdn.tiny.cloud/1/opu4jj54o6rpalgywhl7rjize163cy8mmxh4eumwbsph8lt7/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script src="<?=WWW_DIR?>public/js/script.js"></script>
+<script src="<?=WWW_DIR?>public/js/add.js"></script>
 <div class="contentadmin">
 <?php include_once APP_DIR . '/view/sidemenu.php';?>
 <!--view de la page de création d'articles-->

@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
   tinymce.init({
-  selector: 'textarea#article','textarea#edit',
+  selector: 'textarea#article',
   add_form_submit_trigger : true,
   height: 300,
   menubar: false,

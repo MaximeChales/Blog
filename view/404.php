@@ -5,7 +5,7 @@
     
     La page que vous cherchez est introuvable !
 
-    <a href="<?php WWW_DIR?>"index.php">Revenir à l'accueil</a>
+    <a href="<?= WWW_DIR?>index.php">Revenir à l'accueil</a>
 
 </section>
 

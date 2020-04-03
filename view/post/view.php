@@ -66,7 +66,7 @@
 $('.report').on('click',function(){
     var comment_id = $(this).prop('id');
 $.ajax({
-  url: "<?=APP_DIR?>/comment/report",
+  url: "<?=WWW_DIR?>/comment/report",
   data: {
     id: comment_id
   },

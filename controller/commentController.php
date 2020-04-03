@@ -56,7 +56,7 @@ class CommentController
 
             //TODO creer un message d'erreur en cas d'input vides
         }
-        header('Location:' . WWW_DIR . '/post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
+        header('Location:' . WWW_DIR . 'post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
     }
 
     public function report()

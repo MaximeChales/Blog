@@ -43,7 +43,7 @@ class PostController
         $posts = new post();
         $list = $posts->getPost($id);
         if (empty($list)) {
-            header('Location:' . APP_DIR . '/view/404.php');
+            header('Location:' . WWW_DIR . '/view/404.php');
         }
         $comment = new comment();
         $comments = $comment->getComments($id);

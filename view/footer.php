@@ -1,4 +1,4 @@
-<div class="blockfooter">
+<footer class="blockfooter">
  <!--footer avec differents liens du site et les résaux sociaux de Jean Forteroche. -->
     <div class="wrap">
         <div class="copyright"> Création du site par <a href="https://mchales.alwaysdata.net/" target="blank">©Maxime CHALES </a> - 2020. Tous droits réservés</div>
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-</div>
+</footer>
 
 </body>
 </html>

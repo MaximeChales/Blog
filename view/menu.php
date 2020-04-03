@@ -8,15 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" href= "<?= WWW_DIR ?>public/css/style.css">
+  <link rel="stylesheet" href= "<?=WWW_DIR?>public/css/style.css">
 </head>
 <body>
-<div class="entete">
+<header class="entete">
 
 <h1 class="titre">Billet simple pour l'Alaska</h1>
     <nav id="menu">
-    <ul>
-      <li><a href="<?=WWW_DIR?>">Accueil</a></li>
-      <li><a href="<?=WWW_DIR?>Post">Tous les chapitres</a>
-</nav>
-</div>
+      <ul>
+        <li><a href="<?=WWW_DIR?>">Accueil</a></li>
+        <li><a href="<?=WWW_DIR?>Post">Tous les chapitres</a></li>
+      </ul>
+    </nav>
+</header>

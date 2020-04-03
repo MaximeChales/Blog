@@ -11,10 +11,10 @@ class Router
             if (file_exists($filename)) {
                 require_once $filename;
             } else {
-                header('Location:' . WWW_DIR . 'view/404.php');
+                require APP_DIR . '/view/404.php';
             }
             if (!class_exists($controller)) {
-                header('Location:' . WWW_DIR . 'view/404.php');
+                return false;
             }
 
             $control = new $controller();
@@ -31,7 +31,7 @@ class Router
                 } else {
 
                     if (!method_exists($control, $m)) {
-                        header('Location:' . WWW_DIR . 'view/404.php');
+                        require APP_DIR . '/view/404.php'; 
                     }
                     $control->$m();
                 }

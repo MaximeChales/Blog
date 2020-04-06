@@ -3,7 +3,7 @@
 <div class="bloclogin">
     <h2>Se connecter</h2>
     <div id="bloformlogin">
-    <form action="<?=WWW_DIR . 'user/check'?>" method="post">
+    <form action="<?=WWW_DIR . 'User/check'?>" method="post">
         <input type="text" placeholder="Votre Identifiant" required name="login" <?=htmlspecialchars("")?> >
 
         <input type="password" placeholder="Votre Mot de Passe" required name="password" <?=htmlspecialchars("")?>>

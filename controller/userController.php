@@ -8,7 +8,7 @@ class UserController
     public function login()
     {
         if (isset($_SESSION['is_connected']) && $_SESSION['is_connected'] == true) {
-            header('Location: ' . WWW_DIR . 'admin');
+            header('Location: ' . WWW_DIR . 'Admin');
         }
         require APP_DIR.'/view/user/login.php';
     }
@@ -27,7 +27,7 @@ class UserController
         if (isset($_POST['connexion'])) {
             $user = new User();
             if ($user->checkLogin($_POST['login'], $_POST['password'])) {
-                $url = 'admin';
+                $url = 'Admin';
             }
         }
         header('Location:' . WWW_DIR . $url);

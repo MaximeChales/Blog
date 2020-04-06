@@ -8,7 +8,7 @@
   <div class="zonecentre">
     <h2>Rédaction d'un nouvel article</h2>
 
-      <form action="<?=WWW_DIR?>post/addPost" method="POST" class="addpostform">
+      <form action="<?=WWW_DIR?>Post/addPost" method="POST" class="addpostform">
       <input  type="text" placeholder="Titre de votre article" name="titre" required>
 
           <textarea id="article" name="contenu" cols="30" rows="10" placeholder="Rédigez votre article"></textarea>

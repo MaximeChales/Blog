@@ -4,11 +4,11 @@
 <script src="<?=WWW_DIR?>public/js/edit.js"></script>
 <!--View de l'édition de posts-->
 <div class="contentadmin">
-    <?php include_once APP_DIR . './view/sidemenu.php';?>
+    <?php include_once APP_DIR . '/view/sidemenu.php';?>
     <div class="zonecentre">
        <h2>Editer un article</h2>
 
-    <form  class="addpostform" action="<?=WWW_DIR?>/post/editPost" method="POST">
+    <form  class="addpostform" action="<?=WWW_DIR?>Post/editPost" method="POST">
         <input  type="text" placeholder="Titre de votre article" name="titre" required value="<?=$list['title']?>">
 
             <textarea id="edit" name="article" cols="30" rows="10" placeholder="Rédigez votre article"><?=$list['content']?></textarea>

@@ -11,7 +11,7 @@
         <div class="comments">
             <div class="titreetnom">
                 <div class="titreposteaccueil">
-                    <h2 class="commenttitles"><?=htmlspecialchars($comment['title'])?><a class="supprimer" href="<?=WWW_DIR?>/comment/deleteComment/<?=$comment['id']?>"><i class="far fa-trash-alt"></i></a></h2>
+                    <h2 class="commenttitles"><?=htmlspecialchars($comment['title'])?><a class="supprimer" href="<?=WWW_DIR?>Comment/deleteComment/<?=$comment['id']?>"><i class="far fa-trash-alt"></i></a></h2>
                     <div class="auteurcomment"> par
                             <?=htmlspecialchars($comment['name'])?>
                             le

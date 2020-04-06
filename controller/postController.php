@@ -45,6 +45,11 @@ class PostController
         if (empty($list)) {
             header('Location:' . WWW_DIR . '/view/404.php');
         }
+        $errormessage='';
+        if (isset($_SESSION['error']) && !empty ($_SESSION['error'])){
+            $errormessage = $_SESSION['error'];
+            unset($_SESSION['error']);
+        }
         $comment = new Comment();
         $comments = $comment->getComments($id);
         require APP_DIR . '/view/post/view.php';
@@ -60,7 +65,7 @@ class PostController
         $url_split = explode('/', $url);
         $postid = $url_split[2];
         if (!$_SESSION['is_connected']) {
-            header('Location:' . APP_DIR);
+            header('Location:' . WWW_DIR);
         }
         $posts = new Post();
         //On instancie la classe post puis, on appelle la methode getPost avec pour parametres post_id.
@@ -80,7 +85,7 @@ class PostController
             $post->editPost($_POST['post_id'], $_POST['titre'], $_POST['article']);
             $url = 'Post';
         }
-        header('Location:' . WWW_DIR . '/' . $url);
+        header('Location:' . WWW_DIR . $url);
     }
 
     public function add()
@@ -100,7 +105,7 @@ class PostController
             //On instancie la classe post puis, on appelle la methode addPost avec pour parametres ($_POST['titre'] et $_POST['contenu']
             $post->addPost($_POST['titre'], $_POST['contenu']);
         }
-        header('Location:' . WWW_DIR . '/' . $url);
+        header('Location:' . WWW_DIR . $url);
     } 
  
 
@@ -118,7 +123,7 @@ class PostController
             $list = $posts->deletePost($postid);
             $redirect = 'Post';
         }
-        header('Location: ' . WWW_DIR  . $redirect);
+        header('Location: ' . WWW_DIR . $redirect);
     }
 
 }

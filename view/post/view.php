@@ -1,4 +1,4 @@
-<?php include_once APP_DIR. '/view/menu.php';?>
+<?php include_once APP_DIR . '/view/menu.php';?>
 
 <div class="wrap">
 <!-- Un commence par afficher le post avec le titre et le contenu-->
@@ -41,6 +41,8 @@
 
     <div class="commentaires">
      <h2>Donnez nous votre avis sur cet article</h2>
+
+     <div><?=$errormessage?></div>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
      <form name="comments" action="<?=WWW_DIR?>Comment/save" method="post">
@@ -56,7 +58,7 @@
         <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
 
         <input class="submitcom" type="submit" value="Envoyer le commentaire" name="submit">
-        
+
     </form>
     </div>
 </div>
@@ -65,18 +67,18 @@
 <script>
 $('.report').on('click',function(){
     var comment_id = $(this).prop('id');
-$.ajax({
-  url: "<?=WWW_DIR?>/Comment/report",
-  data: {
-    id: comment_id
-  },
-  success: function( result ) {
-  alert('Message signalé avec succès !');
-  $('#'+comment_id).hide();
-  $('#c'+comment_id).addClass('flouterletext')
-  }
-});
+    $.ajax({
+    url: "<?=WWW_DIR?>Comment/report",
+    data: {
+        id: comment_id
+    },
+    success: function( result ) {
+        alert('Message signalé avec succès !');
+        $('#'+comment_id).hide();
+        $('#c'+comment_id).addClass('flouterletext')
+    }
+    });
 });
 </script>
 
-<?php include_once APP_DIR. '/view/footer.php';?>
+<?php include_once APP_DIR . '/view/footer.php';?>

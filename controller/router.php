@@ -12,9 +12,11 @@ class Router
                 require_once $filename;
             } else {
                 require APP_DIR . '/view/404.php';
+                exit;
             }
             if (!class_exists($controller)) {
-                return false;
+                require APP_DIR . '/view/404.php';
+                exit;
             }
 
             $control = new $controller();
@@ -31,7 +33,8 @@ class Router
                 } else {
 
                     if (!method_exists($control, $m)) {
-                        require APP_DIR . '/view/404.php'; 
+                        require APP_DIR . '/view/404.php';
+                        exit; 
                     }
                     $control->$m();
                 }

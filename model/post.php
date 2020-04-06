@@ -8,6 +8,7 @@ class Post extends Model
         $data = $this->db->prepare("select title from post where id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
+        $data->closeCursor(); 
         return $result['title'];
     }
     public function getPosts()
@@ -21,6 +22,7 @@ class Post extends Model
             //recuperation resultat et les replacer par un underscore en allant cherche le title
             $result[$key]['decodedtitle'] = str_replace(' ', "_", $post['title']);
         }
+        $data->closeCursor(); 
         return $result;
     }
 
@@ -30,7 +32,7 @@ class Post extends Model
         $data = $this->db->prepare("select * from post where id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
-
+        $data->closeCursor(); 
         return $result;
     }
     public function getLastPost()
@@ -39,6 +41,7 @@ class Post extends Model
         $data = $this->db->prepare("select * from post order by date_upd desc limit 1");
         $data->execute();
         $result = $data->fetch(PDO::FETCH_ASSOC);
+        $data->closeCursor(); 
         return $result;
     }
 
@@ -46,21 +49,23 @@ class Post extends Model
     {
         // Ajoute un poste en inserant des données associés à celles de la bdd
         $data = $this->db->prepare("insert into `post` values (null,1,:title,:content,:date_add,:date_upd)");
-        return $data->execute(array(
+        $data->execute(array(
             ':title' => $title,
             ':date_add' => date('Y-m-d H:i:s'),
             ':content' => $content,
             ':date_upd' => date('Y-m-d H:i:s'),
         ));
+        $data->closeCursor(); 
     }
 
     public function deletePost($id)
     {
         //Supprime les données associés à un id dans la table post de la bdd
         $data = $this->db->prepare("delete from `post` WHERE id = :id");
-        return $data->execute(array(
+        $data->execute(array(
             ':id' => $id,
         ));
+        $data->closeCursor(); 
     }
 
     public function editPost($id, $title, $content)
@@ -68,12 +73,13 @@ class Post extends Model
         //Modifie les données associés à un id dans la table post de la bdd
         $data = $this->db->prepare("update `post` set title = :title, content = :content, date_upd = :date_upd
       where id = :id");
-        return $data->execute(array(
+      $data->execute(array(
             ':id' => $id,
             ':title' => $title,
             ':content' => $content,
             ':date_upd' => date('Y-m-d H:i:s'),
         ));
+        $data->closeCursor(); 
     }
 
 }

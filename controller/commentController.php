@@ -1,12 +1,12 @@
 <?php
-require_once APP_DIR.'/model/Comment.php';
-require_once APP_DIR.'/model/Post.php';
+require_once APP_DIR . '/model/Comment.php';
+require_once APP_DIR . '/model/Post.php';
 
 class CommentController
 {
 
 /**
- *Appel à la fonction getReportedComments() qui sert à recuperer les comments qui ont étés signalés et redirige vers la 
+ *Appel à la fonction getReportedComments() qui sert à recuperer les comments qui ont étés signalés et redirige vers la
  *page des commentaires SI ON
  */
 
@@ -15,13 +15,11 @@ class CommentController
         $comment = new Comment();
         $comments = $comment->getReportedComments();
         if ($_SESSION['is_connected']) {
-        require APP_DIR.'/view/comment/index.php';
+            require APP_DIR . '/view/comment/index.php';
+        } else {
+            header('Location:' . WWW_DIR);
         }
 
-       else{
-           header('Location:' . WWW_DIR );
-       }  
-        
     }
 
     /**
@@ -30,7 +28,7 @@ class CommentController
 
     public function add()
     {
-        require APP_DIR.'/view/comment/add.php';
+        require APP_DIR . '/view/comment/add.php';
     }
     /**
      *sauvegarde des comments dans la BDD
@@ -41,20 +39,22 @@ class CommentController
         if (isset($_POST['submit'])) {
             $post = new Post();
             $comment = new Comment();
-            //On verifie que les inputs ne sont pas vides avant d'envoyer le commentaire à la BDD.
-            if (!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['title']) && !empty($_POST['commentaire']) && !empty($_POST['post_id'])) {
-                $variable = $_POST['email'];
-                if ( preg_match ( " /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ " , $variable ) )
-                {
-
-   
+            if (empty($_POST['email'])){
+                $_SESSION['error'] = 'veuillez insérer votre adresse e-mail.';
+            } elseif (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $_POST['email'])){
+                $_SESSION['error'] = 'veuillez insérer une adresse e-mail valide.';
+            } elseif (empty($_POST['pseudo'])){
+                $_SESSION['error'] = 'veuillez insérer votre nom.';
+            } elseif (empty($_POST['title'])){
+                $_SESSION['error'] = 'veuillez insérer votre titre.';
+            } elseif (empty($_POST['commentaire'])){
+                $_SESSION['error'] = 'veuillez insérer votre message.';
+            } elseif (empty($_POST['post_id'])){
+                $_SESSION['error'] = 'Merci de ne pas modifier le code.';
+            } else {
                 $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']);
-            
             }
-            
-        } 
 
-            //TODO creer un message d'erreur en cas d'input vides
         }
         header('Location:' . WWW_DIR . 'Post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
     }
@@ -87,9 +87,9 @@ class CommentController
         } else {
             $list = $comments->getReportedComments();
             if ($_SESSION['is_connected'] == true) {
-                require APP_DIR.'/view/post/admin.php';
+                require APP_DIR . '/view/post/admin.php';
             } else {
-                require APP_DIR.'/view/post/';
+                require APP_DIR . '/view/post/';
             }
         }
 
@@ -110,12 +110,9 @@ class CommentController
         if ($_SESSION['is_connected']) {
             $comment = new Comment();
             $list = $comment->deleteComment($commentid);
-            $redirect = 'comment';
+            $redirect = 'Comment';
         }
-        header('Location: ' . WWW_DIR . '/' . $redirect);
+        header('Location: ' . WWW_DIR . $redirect);
     }
 
 }
-
-
-

@@ -5,11 +5,6 @@ class User extends Model
     public function checkLogin($user, $password)
     {
 
-        /* Cryptage du MDP
-
-        echo password_hash($password,PASSWORD_DEFAULT,['cost'=>12]);
-        exit;*/
-
         $_SESSION['is_connected'] = false;
         $data = $this->db->prepare("select * FROM `user` WHERE `nickname` = :user");
         $data->execute([':user' => $user]);

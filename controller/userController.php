@@ -1,6 +1,6 @@
 <?php
 //On charge le fichier user.php pour pouvoir récuperer la classe model et son extend: user
-require_once APP_DIR.'/model/user.php';
+require_once APP_DIR.'/model/User.php';
 class UserController
 {
 
@@ -23,9 +23,9 @@ class UserController
     public function check()
     {
         //Vérifie que les identifiants sont bons avant de refiriger vers la page admin
-        $url = 'user/login';
+        $url = 'User/login';
         if (isset($_POST['connexion'])) {
-            $user = new user();
+            $user = new User();
             if ($user->checkLogin($_POST['login'], $_POST['password'])) {
                 $url = 'admin';
             }

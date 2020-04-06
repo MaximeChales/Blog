@@ -5,7 +5,7 @@
     <h2>  Erreur 404 </h2>
     La page que vous cherchez est introuvable !
 
-    <a href="<?php WWW_DIR?>">Revenir à l'accueil</a>
+    <a href="<?=WWW_DIR?>">Revenir à l'accueil</a>
     </div>
 </section>
 

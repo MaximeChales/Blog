@@ -1,6 +1,6 @@
 <?php
-require APP_DIR . '/model/post.php';
-require APP_DIR . '/model/comment.php';
+require APP_DIR . '/model/Post.php';
+require APP_DIR . '/model/Comment.php';
 class PostController
 {
 
@@ -8,7 +8,7 @@ class PostController
     {
 
         //On instancie la classe post
-        $posts = new post();
+        $posts = new Post();
 
         /**
          * On verifie que l'id' existe et qu'il n'est pas vide. Dans ce cas,
@@ -22,7 +22,7 @@ class PostController
              * On appelle la methode getcomments avec pour paramettre l'id du post
              * TODO
              * */
-            $comment = new comment();
+            $comment = new Comment();
             $comments = $comment->getComments($url[1]);
             require APP_DIR . '/view/post/view.php';
         } else {
@@ -40,12 +40,12 @@ class PostController
      */
     public function view($id)
     {
-        $posts = new post();
+        $posts = new Post();
         $list = $posts->getPost($id);
         if (empty($list)) {
             header('Location:' . WWW_DIR . '/view/404.php');
         }
-        $comment = new comment();
+        $comment = new Comment();
         $comments = $comment->getComments($id);
         require APP_DIR . '/view/post/view.php';
     }
@@ -62,7 +62,7 @@ class PostController
         if (!$_SESSION['is_connected']) {
             header('Location:' . APP_DIR);
         }
-        $posts = new post();
+        $posts = new Post();
         //On instancie la classe post puis, on appelle la methode getPost avec pour parametres post_id.
         //On précise que l'on a besoin de edit.php (qui est la vue)
 
@@ -72,13 +72,13 @@ class PostController
 
     public function editPost()
     {
-        $url = 'post';
+        $url = 'Post';
 
         if (isset($_POST['submit']) && $_SESSION['is_connected']) {
-            $post = new post();
+            $post = new Post();
             //On instancie la classe post puis, on appelle la methode editPost avec pour parametres $_POST['post_id'], $_POST['titre'] et $_POST['article'
             $post->editPost($_POST['post_id'], $_POST['titre'], $_POST['article']);
-            $url = 'post';
+            $url = 'Post';
         }
         header('Location:' . WWW_DIR . '/' . $url);
     }
@@ -94,9 +94,9 @@ class PostController
     public function addPost()
     {
 
-        $url = 'post';
+        $url = 'Post';
         if (isset($_POST['submit']) && $_SESSION['is_connected']) {
-            $post = new post();
+            $post = new Post();
             //On instancie la classe post puis, on appelle la methode addPost avec pour parametres ($_POST['titre'] et $_POST['contenu']
             $post->addPost($_POST['titre'], $_POST['contenu']);
         }
@@ -107,16 +107,16 @@ class PostController
     public function deletePost()
     {
 
-        $redirect = 'post';
+        $redirect = 'Post';
 
         $url = $_GET['url'];
         $url_split = explode('/', $url);
         $postid = $url_split[2];
         if ($_SESSION['is_connected']) {
             //On instancie la classe post puis, on appelle la methode deletePost avec pour parametre postid
-            $posts = new post();
+            $posts = new Post();
             $list = $posts->deletePost($postid);
-            $redirect = 'post';
+            $redirect = 'Post';
         }
         header('Location: ' . WWW_DIR  . $redirect);
     }

@@ -1,6 +1,6 @@
 <?php
-require_once APP_DIR.'/model/comment.php';
-require_once APP_DIR.'/model/post.php';
+require_once APP_DIR.'/model/Comment.php';
+require_once APP_DIR.'/model/Post.php';
 
 class CommentController
 {
@@ -12,7 +12,7 @@ class CommentController
 
     public function index()
     {
-        $comment = new comment();
+        $comment = new Comment();
         $comments = $comment->getReportedComments();
         if ($_SESSION['is_connected']) {
         require APP_DIR.'/view/comment/index.php';
@@ -39,8 +39,8 @@ class CommentController
     {
 
         if (isset($_POST['submit'])) {
-            $post = new post();
-            $comment = new comment();
+            $post = new Post();
+            $comment = new Comment();
             //On verifie que les inputs ne sont pas vides avant d'envoyer le commentaire à la BDD.
             if (!empty($_POST['email']) && !empty($_POST['pseudo']) && !empty($_POST['title']) && !empty($_POST['commentaire']) && !empty($_POST['post_id'])) {
                 $variable = $_POST['email'];
@@ -56,7 +56,7 @@ class CommentController
 
             //TODO creer un message d'erreur en cas d'input vides
         }
-        header('Location:' . WWW_DIR . 'post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
+        header('Location:' . WWW_DIR . 'Post/' . $_POST['post_id'] . '-' . $post->getTitle($_POST['post_id']));
     }
 
     public function report()
@@ -67,7 +67,7 @@ class CommentController
             $comment_id = $_GET['id'];
         }
         if ($comment_id) {
-            $comment = new comment();
+            $comment = new Comment();
             $result = $comment->reportComment($comment_id);
         }
 
@@ -77,11 +77,11 @@ class CommentController
      */
     public function getAllComments()
     {
-        $post = new post();
+        $post = new Post();
         if (isset($url[1]) && !empty($url[1])) {
             $list = $comment->getAllComments($url[1]);
 
-            $comment = new comment();
+            $comment = new Comment();
             $comments = $comment->getAllComments($url[1]);
 
         } else {
@@ -108,7 +108,7 @@ class CommentController
         $url_split = explode('/', $url);
         $commentid = $url_split[2];
         if ($_SESSION['is_connected']) {
-            $comment = new comment();
+            $comment = new Comment();
             $list = $comment->deleteComment($commentid);
             $redirect = 'comment';
         }

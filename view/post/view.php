@@ -1,4 +1,4 @@
-<?php include_once APP_DIR. './view/menu.php';?>
+<?php include_once APP_DIR. '/view/menu.php';?>
 
 <div class="wrap">
 <!-- Un commence par afficher le post avec le titre et le contenu-->
@@ -43,7 +43,7 @@
      <h2>Donnez nous votre avis sur cet article</h2>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
-     <form name="comments" action="<?=WWW_DIR?>comment/save" method="post">
+     <form name="comments" action="<?=WWW_DIR?>Comment/save" method="post">
 
        <input class="email" type="text" placeholder="Entrez votre adresse email" name="email">
 
@@ -66,7 +66,7 @@
 $('.report').on('click',function(){
     var comment_id = $(this).prop('id');
 $.ajax({
-  url: "<?=WWW_DIR?>/comment/report",
+  url: "<?=WWW_DIR?>/Comment/report",
   data: {
     id: comment_id
   },
@@ -79,4 +79,4 @@ $.ajax({
 });
 </script>
 
-<?php include_once APP_DIR. './view/footer.php';?>
+<?php include_once APP_DIR. '/view/footer.php';?>

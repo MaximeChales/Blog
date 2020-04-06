@@ -12,7 +12,7 @@ if (!defined('WWW_DIR')) {
   define('WWW_DIR', $WWW_DIR);    
 }   
 
-require_once APP_DIR.'/controller/router.php';
+require_once APP_DIR.'/controller/Router.php';
 $router = new router();
 $router->route();
 ?>

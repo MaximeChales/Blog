@@ -9,4 +9,5 @@ class AdminController
             header('Location: ' . WWW_DIR . 'User/login');
         }
     }
+    
 }

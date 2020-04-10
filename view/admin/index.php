@@ -1,7 +1,7 @@
-<?php include_once APP_DIR.'/view/menu.php';?>
+<?php include_once APP_DIR . '/view/menu.php';?>
 <div class="contentadmin">
 
-<?php include_once APP_DIR.'/view/sidemenu.php'?>
+<?php include_once APP_DIR . '/view/sidemenu.php'?>
 
 <div class="zonecentre">
   <section class="wrap">
@@ -22,4 +22,4 @@
   </section >
 </div>
 </div>
-<?php include_once APP_DIR.'/view/footer.php';?>
+<?php include_once APP_DIR . '/view/footer.php';?>

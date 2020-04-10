@@ -1,6 +1,6 @@
 <?php
-require APP_DIR.'/model/Post.php';
-require APP_DIR.'/model/Comment.php';
+require APP_DIR . '/model/Post.php';
+require APP_DIR . '/model/Comment.php';
 class HomeController
 {
     public function index()
@@ -10,7 +10,7 @@ class HomeController
          */
         $post = $posts->getLastPost();
 
-        require APP_DIR.'/view/home/index.php';
+        require APP_DIR . '/view/home/index.php';
 
     }
 }

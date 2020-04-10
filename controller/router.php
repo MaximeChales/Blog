@@ -34,7 +34,7 @@ class Router
 
                     if (!method_exists($control, $m)) {
                         require APP_DIR . '/view/404.php';
-                        exit; 
+                        exit;
                     }
                     $control->$m();
                 }

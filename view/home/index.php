@@ -1,4 +1,4 @@
-<?php include_once APP_DIR.'/view/menu.php';?>
+<?php include_once APP_DIR . '/view/menu.php';?>
 <div class="blocaccueil">
 <section  class="wrap">
     <div class="messageaccueil"><h2>Bonjour et bienvenue sur le blog dédié à l'auteur Jean Forteroche et à son prochain roman
@@ -35,4 +35,4 @@
 
     </div>
 </section >
-<?php include_once APP_DIR.'/view/footer.php';?>
+<?php include_once APP_DIR . '/view/footer.php';?>

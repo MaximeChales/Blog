@@ -17,4 +17,4 @@
       </form>
   </div>
 </div>
-   <?php include_once APP_DIR . '/view/footer.php';?> 
+   <?php include_once APP_DIR . '/view/footer.php';?>

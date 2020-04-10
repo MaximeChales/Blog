@@ -1,5 +1,5 @@
 <?php
-require_once APP_DIR.'/model/Model.php';
+require_once APP_DIR . '/model/Model.php';
 class User extends Model
 {
     public function checkLogin($user, $password)
@@ -9,7 +9,7 @@ class User extends Model
         $data = $this->db->prepare("select * FROM `user` WHERE `nickname` = :user");
         $data->execute([':user' => $user]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
-        $data->closeCursor(); 
+        $data->closeCursor();
 
         if ($result) {
             // utilisation de BCRYPT et plus principalement PASSWORD_DEFAULT pour hacher et crypter le MDP.
@@ -19,7 +19,7 @@ class User extends Model
                     $data->execute([':id' => $result['id'], ':password' => password_hash($password, PASSWORD_DEFAULT, ['cost' => 12])]);
                 }
                 $_SESSION['is_connected'] = true;
-                $data->closeCursor(); 
+                $data->closeCursor();
                 return true;
             }
         }

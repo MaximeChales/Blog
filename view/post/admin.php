@@ -14,7 +14,7 @@
         <h2><a href="<?=WWW_DIR?>Post/<?=$post['id']?>-<?=$post['decodedtitle']?>" target="_blank"><?=$post['title']?></a>
         <div class="options">
         <a class="editer" href="<?=WWW_DIR?>Post/edit/<?=$post['id']?>"><i class="fas fa-pen"></i></a>
-    
+
         <a class="supprimer" href="<?=WWW_DIR?>Post/deletePost/<?=$post['id']?>"><i class="far fa-trash-alt"></i></a>
         </div>
         </h2>

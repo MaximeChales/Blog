@@ -14,10 +14,10 @@
                     <h2 class="commenttitles"><?=htmlspecialchars($comment['title'])?>
                         <div class="options">
                             <a class="unreport" href=""><i class="fas fa-times"></i></a>
-                            <a class="supprimer" href="<?=WWW_DIR?>Comment/deleteComment/<?=$comment['id']?>"><i class="far fa-trash-alt"></i></a>   
+                            <a class="supprimer" href="<?=WWW_DIR?>Comment/deleteComment/<?=$comment['id']?>"><i class="far fa-trash-alt"></i></a>
                         </div>
                     </h2>
-                    
+
                     <div class="auteurcomment"> par
                             <?=htmlspecialchars($comment['name'])?>
                             le
@@ -49,7 +49,7 @@ $('.unreport').on('click',function(){
          $('#'+comment_id).hide();
 
 
-         
+
 
     }
     });

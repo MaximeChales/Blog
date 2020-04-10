@@ -1,8 +1,8 @@
 
-$(document).ready(function() {
-    tinymce.init({
-    selector:'textarea#edit',
-    add_form_submit_trigger : true,
+$(document).ready(function () {
+  tinymce.init({
+    selector: 'textarea#edit',
+    add_form_submit_trigger: true,
     height: 300,
     menubar: false,
     plugins: [
@@ -11,12 +11,12 @@ $(document).ready(function() {
       'insertdatetime media table paste code help wordcount'
     ],
     toolbar: 'undo redo | formatselect | ' +
-    ' bold italic backcolor | alignleft aligncenter ' +
-    ' alignright alignjustify | bullist numlist outdent indent |' +
-    ' removeformat | help',
+      ' bold italic backcolor | alignleft aligncenter ' +
+      ' alignright alignjustify | bullist numlist outdent indent |' +
+      ' removeformat | help',
     content_css: [
       '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
       '//www.tiny.cloud/css/codepen.min.css'
     ]
   });
-  })
+})

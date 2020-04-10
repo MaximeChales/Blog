@@ -1,5 +1,5 @@
 
-<?php include_once APP_DIR.'/view/menu.php';?>
+<?php include_once APP_DIR . '/view/menu.php';?>
 <section class="wrap">
     <div class="bloc404">
     <h2>  Erreur 404 </h2>
@@ -9,4 +9,4 @@
     </div>
 </section>
 
-<?php include_once APP_DIR.'/view/footer.php';?>
+<?php include_once APP_DIR . '/view/footer.php';?>

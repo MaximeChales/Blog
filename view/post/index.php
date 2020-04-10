@@ -1,4 +1,4 @@
-<?php include_once APP_DIR.'/view/menu.php';?>
+<?php include_once APP_DIR . '/view/menu.php';?>
 <div class="enteteviewpost"><h2> Vous trouverez sur cette page tous les chapitre du récit de Jean Forteroche ! </h2></div>
 
 <div class="wrap" >
@@ -20,4 +20,4 @@
     <?php endforeach?>
     </div>
 </div>
-<?php include_once APP_DIR.'/view/footer.php';?>
+<?php include_once APP_DIR . '/view/footer.php';?>

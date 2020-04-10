@@ -1,5 +1,5 @@
 <?php
-require_once APP_DIR.'/model/Model.php';
+require_once APP_DIR . '/model/Model.php';
 class Comment extends Model
 {
 
@@ -24,14 +24,14 @@ class Comment extends Model
     {
         $data = $this->db->prepare("update `comment` set `status` = 1 where `id` = :id ");
         $data->execute(array(':id' => $id));
-        $data->closeCursor(); 
+        $data->closeCursor();
     }
 
     public function cancelReport($id)
     {
         $data = $this->db->prepare("update `comment` set `status` = 0 where `id` = :id ");
         $data->execute(array(':id' => $id));
-        $data->closeCursor(); 
+        $data->closeCursor();
     }
 
     /**

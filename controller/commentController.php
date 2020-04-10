@@ -40,15 +40,15 @@ class CommentController
             $post = new Post();
             $comment = new Comment();
             if (empty($_POST['email'])){
-                $_SESSION['error'] = 'veuillez insérer votre adresse e-mail.';
+                $_SESSION['error'] = 'Veuillez insérer votre adresse e-mail.';
             } elseif (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $_POST['email'])){
-                $_SESSION['error'] = 'veuillez insérer une adresse e-mail valide.';
+                $_SESSION['error'] = 'Veuillez insérer une adresse e-mail valide.';
             } elseif (empty($_POST['pseudo'])){
-                $_SESSION['error'] = 'veuillez insérer votre nom.';
+                $_SESSION['error'] = 'Veuillez insérer votre nom.';
             } elseif (empty($_POST['title'])){
-                $_SESSION['error'] = 'veuillez insérer votre titre.';
+                $_SESSION['error'] = 'Veuillez insérer votre titre.';
             } elseif (empty($_POST['commentaire'])){
-                $_SESSION['error'] = 'veuillez insérer votre message.';
+                $_SESSION['error'] = 'Veuillez insérer votre message.';
             } elseif (empty($_POST['post_id'])){
                 $_SESSION['error'] = 'Merci de ne pas modifier le code.';
             } else {
@@ -70,8 +70,21 @@ class CommentController
             $comment = new Comment();
             $result = $comment->reportComment($comment_id);
         }
-
     }
+
+    public function cancelReport()
+    {
+        $result = false;
+        $comment_id = 0;
+        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+            $comment_id = $_GET['id'];
+        }
+        if ($comment_id) {
+            $comment = new Comment();
+            $result = $comment->cancelReport($comment_id);
+        }
+    }
+
     /**
      * recuperation des commentaires signalés:
      */

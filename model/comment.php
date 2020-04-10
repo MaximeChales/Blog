@@ -27,6 +27,13 @@ class Comment extends Model
         $data->closeCursor(); 
     }
 
+    public function cancelReport($id)
+    {
+        $data = $this->db->prepare("update `comment` set `status` = 0 where `id` = :id ");
+        $data->execute(array(':id' => $id));
+        $data->closeCursor(); 
+    }
+
     /**
      * Sauvegarde le commentaire avec chacun des criteres de la BDD
      */

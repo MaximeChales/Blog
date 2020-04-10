@@ -1,6 +1,6 @@
 <?php
 
-//création de la session
+//démarre le systeme de sessions générant un code de session.
 session_start();
 if (!defined('APP_DIR')) {
      define('APP_DIR', dirname(getcwd()));

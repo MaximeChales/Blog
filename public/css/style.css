@@ -543,6 +543,14 @@ textarea {
 	display: flex;
 	flex-direction: row;
 	padding-right: 5px;
+	width: 60px;
+	justify-content: space-between;
+}
+
+.error{
+	color:red;
+	padding-bottom: 5px;
+	font-size: 20px;
 }
 
 

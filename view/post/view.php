@@ -42,7 +42,7 @@
     <div class="commentaires">
      <h2>Donnez nous votre avis sur cet article</h2>
 
-     <div><?=$errormessage?></div>
+     <div class='error'><?=$errormessage?></div>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
      <form name="comments" action="<?=WWW_DIR?>Comment/save" method="post">

@@ -2,7 +2,13 @@
 require_once APP_DIR . '/model/Model.php';
 class Post extends Model
 {
-    //récupération des titres dans la BDD
+
+    /**
+     * Récupération des titres dans la BDD
+     *
+     * @param  int $id
+     * @return void
+     */
     public function getTitle($id)
     {
         $data = $this->db->prepare("select title from post where id = :id");
@@ -11,9 +17,15 @@ class Post extends Model
         $data->closeCursor();
         return $result['title'];
     }
+    /**
+     * Récupération de tous les postes dans la BDD
+     *
+     * @return void
+     */
+
     public function getPosts()
     {
-        //récupération de tous les postes dans la BDD
+
         $data = $this->db->prepare("select * from post order by date_add ");
 
         $data->execute();
@@ -26,18 +38,28 @@ class Post extends Model
         return $result;
     }
 
+    /**
+     * Récupération des postes dans la BDD mais individuellement cette fois
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function getPost($id)
     {
-        //récupération des postes dans la BDD mais individuellement cette fois
+        //
         $data = $this->db->prepare("select * from post where id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
         $data->closeCursor();
         return $result;
     }
+    /**
+     * Permet de récuperer le dernier poste mis à jour (pour ensuite l'afficher sur la page d'accueil)
+     *
+     * @return void
+     */
     public function getLastPost()
     {
-        //permet de récuperer le dernier poste mis à jour (pour ensuite l'afficher sur la page d'accueil)
         $data = $this->db->prepare("select * from post order by date_upd desc limit 1");
         $data->execute();
         $result = $data->fetch(PDO::FETCH_ASSOC);
@@ -49,36 +71,49 @@ class Post extends Model
     {
         // Ajoute un poste en inserant des données associés à celles de la bdd
         $data = $this->db->prepare("insert into `post` values (null,1,:title,:content,:date_add,:date_upd)");
-        $data->execute(array(
+        $data->execute([
             ':title' => $title,
             ':date_add' => date('Y-m-d H:i:s'),
             ':content' => $content,
             ':date_upd' => date('Y-m-d H:i:s'),
-        ));
+        ]);
         $data->closeCursor();
     }
 
+    /**
+     * Supprime les données associés à un id dans la table post de la bdd
+     *
+     * @param  int $id
+     * @return void
+     */
     public function deletePost($id)
     {
-        //Supprime les données associés à un id dans la table post de la bdd
         $data = $this->db->prepare("delete from `post` WHERE id = :id");
-        $data->execute(array(
+        $data->execute([
             ':id' => $id,
-        ));
+        ]);
         $data->closeCursor();
     }
 
+    /**
+     * Modifie les données associés à un id dans la table post de la bdd
+     *
+     * @param  int $id
+     * @param  string $title
+     * @param  string $content
+     * @return void
+     */
     public function editPost($id, $title, $content)
     {
-        //Modifie les données associés à un id dans la table post de la bdd
+        //
         $data = $this->db->prepare("update `post` set title = :title, content = :content, date_upd = :date_upd
       where id = :id");
-        $data->execute(array(
+        $data->execute([
             ':id' => $id,
             ':title' => $title,
             ':content' => $content,
             ':date_upd' => date('Y-m-d H:i:s'),
-        ));
+        ]);
         $data->closeCursor();
     }
 

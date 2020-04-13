@@ -13,6 +13,7 @@ class User extends Model
 
         if ($result) {
             // utilisation de BCRYPT et plus principalement PASSWORD_DEFAULT pour hacher et crypter le MDP.
+            //Password rehash permet de rehacher le mdp si le cryptage n'est pas conforme.
             if (password_verify($password, $result['password'])) {
                 if (password_needs_rehash($password, PASSWORD_DEFAULT, ['cost' => 12])) {
                     $data = $this->db->prepare("update `user` set password = :password WHERE `id` = :id");

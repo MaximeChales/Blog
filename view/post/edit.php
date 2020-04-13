@@ -9,11 +9,11 @@
        <h2>Editer un article</h2>
 
     <form  class="addpostform" action="<?=WWW_DIR?>Post/editPost" method="POST">
-        <input  type="text" placeholder="Titre de votre article" name="titre" required value="<?=$list['title']?>">
+        <input  type="text" placeholder="Titre de votre article" name="titre" required value="<?=$post['title']?>">
 
-            <textarea id="edit" name="article" cols="30" rows="10" placeholder="Rédigez votre article"><?=$list['content']?></textarea>
+            <textarea id="edit" name="article" cols="30" rows="10" placeholder="Rédigez votre article"><?=$post['content']?></textarea>
 
-            <input class="inputid" type="text" name="post_id" value="<?=$list['id']?>">
+            <input class="inputid" type="text" name="post_id" value="<?=$post['id']?>">
             <input class="submitcom" type="submit" value="Envoyer l'article" name="submit">
         </form>
     </div>

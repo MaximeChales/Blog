@@ -61,51 +61,29 @@ class CommentController
 
     public function report()
     {
-        $result = false;
         $comment_id = 0;
         if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             $comment_id = $_GET['id'];
         }
         if ($comment_id) {
             $comment = new Comment();
-            $result = $comment->reportComment($comment_id);
+            $comment->reportComment($comment_id);
         }
     }
 
     public function cancelReport()
     {
-        $result = false;
-        $comment_id = 0;
-        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-            $comment_id = $_GET['id'];
-        }
-        if ($comment_id) {
+        $redirect = '';
+
+        $url = $_GET['url'];
+        $url_split = explode('/', $url);
+        $commentid = $url_split[2];
+        if ($_SESSION['is_connected']) {
             $comment = new Comment();
-            $result = $comment->cancelReport($comment_id);
+            $comment->cancelReport($commentid);
+            $redirect = 'Comment';
         }
-    }
-
-    /**
-     * recuperation des commentaires signalés:
-     */
-    public function getAllComments()
-    {
-        $post = new Post();
-        if (isset($url[1]) && !empty($url[1])) {
-            $list = $comment->getAllComments($url[1]);
-
-            $comment = new Comment();
-            $comments = $comment->getAllComments($url[1]);
-
-        } else {
-            $list = $comments->getReportedComments();
-            if ($_SESSION['is_connected'] == true) {
-                require APP_DIR . '/view/post/admin.php';
-            } else {
-                require APP_DIR . '/view/post/';
-            }
-        }
-
+        header('Location: ' . WWW_DIR . $redirect);
     }
 
     /**
@@ -122,7 +100,7 @@ class CommentController
         $commentid = $url_split[2];
         if ($_SESSION['is_connected']) {
             $comment = new Comment();
-            $list = $comment->deleteComment($commentid);
+            $comment->deleteComment($commentid);
             $redirect = 'Comment';
         }
         header('Location: ' . WWW_DIR . $redirect);

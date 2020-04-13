@@ -71,7 +71,7 @@ class PostController
         //On instancie la classe post puis, on appelle la methode getPost avec pour parametres post_id.
         //On précise que l'on a besoin de edit.php (qui est la vue)
 
-        $list = $posts->getPost($postid);
+        $post = $posts->getPost($postid);
         require APP_DIR . '/view/post/edit.php';
     }
 
@@ -120,7 +120,7 @@ class PostController
         if ($_SESSION['is_connected']) {
             //On instancie la classe post puis, on appelle la methode deletePost avec pour parametre postid
             $posts = new Post();
-            $list = $posts->deletePost($postid);
+            $posts->deletePost($postid);
             $redirect = 'Post';
         }
         header('Location: ' . WWW_DIR . $redirect);

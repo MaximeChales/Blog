@@ -47,7 +47,7 @@ class Post extends Model
     public function getPost($id)
     {
         //
-        $data = $this->db->prepare("select * from post where id = :id");
+        $data = $this->db->prepare("SELECT * FROM post WHERE id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
         $data->closeCursor();
@@ -60,7 +60,7 @@ class Post extends Model
      */
     public function getLastPost()
     {
-        $data = $this->db->prepare("select * from post order by date_upd desc limit 1");
+        $data = $this->db->prepare("SELECT * FROM post ORDER BY date_upd desc limit 1");
         $data->execute();
         $result = $data->fetch(PDO::FETCH_ASSOC);
         $data->closeCursor();
@@ -70,7 +70,7 @@ class Post extends Model
     public function addPost($title, $content)
     {
         // Ajoute un poste en inserant des données associés à celles de la bdd
-        $data = $this->db->prepare("insert into `post` values (null,1,:title,:content,:date_add,:date_upd)");
+        $data = $this->db->prepare("INSERT INTO `post` VALUES (null,1,:title,:content,:date_add,:date_upd)");
         $data->execute([
             ':title' => $title,
             ':date_add' => date('Y-m-d H:i:s'),
@@ -88,7 +88,7 @@ class Post extends Model
      */
     public function deletePost($id)
     {
-        $data = $this->db->prepare("delete from `post` WHERE id = :id");
+        $data = $this->db->prepare("DELETE FROM `post` WHERE id = :id");
         $data->execute([
             ':id' => $id,
         ]);
@@ -106,7 +106,7 @@ class Post extends Model
     public function editPost($id, $title, $content)
     {
         //
-        $data = $this->db->prepare("update `post` set title = :title, content = :content, date_upd = :date_upd
+        $data = $this->db->prepare("UPDATE `post` SET title = :title, content = :content, date_upd = :date_upd
       where id = :id");
         $data->execute([
             ':id' => $id,

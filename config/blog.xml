@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.8.5
+- https://www.phpmyadmin.net
+-
+- Hôte : 127.0.0.1:3306
+- Généré le :  lun. 13 avr. 2020 à 13:26
+- Version du serveur :  5.7.26
+- Version de PHP :  7.2.18
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="blog" collation="utf8_bin" charset="utf8">
+            <pma:table name="comment">
+                CREATE TABLE `comment` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `email` text COLLATE utf8_bin NOT NULL,
+                  `date_add` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                  `post_id` int(11) NOT NULL,
+                  `content` text COLLATE utf8_bin NOT NULL,
+                  `title` varchar(100) COLLATE utf8_bin NOT NULL,
+                  `status` tinyint(1) NOT NULL,
+                  `name` varchar(50) COLLATE utf8_bin NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `fk_post_id` (`post_id`),
+                  KEY `idx_status` (`status`) USING BTREE
+                ) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+            </pma:table>
+            <pma:table name="post">
+                CREATE TABLE `post` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `user_id` int(11) NOT NULL,
+                  `title` varchar(100) COLLATE utf8_bin NOT NULL,
+                  `content` text COLLATE utf8_bin NOT NULL,
+                  `date_add` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                  `date_upd` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                  PRIMARY KEY (`id`),
+                  KEY `fk_user_id` (`user_id`),
+                  CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+            </pma:table>
+            <pma:table name="user">
+                CREATE TABLE `user` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `nickname` text COLLATE utf8_bin NOT NULL,
+                  `name` varchar(50) COLLATE utf8_bin NOT NULL,
+                  `surname` text COLLATE utf8_bin NOT NULL,
+                  `email` text COLLATE utf8_bin NOT NULL,
+                  `password` text COLLATE utf8_bin NOT NULL,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de données :  'blog'
+    -->
+    <database name="blog">
+        <!-- Table comment -->
+        <table name="comment">
+            <column name="id">1</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:33:24</column>
+            <column name="post_id">3</column>
+            <column name="content">Un chef d'oeuvre, j'ai hâte de lire la suite !</column>
+            <column name="title">Super !</column>
+            <column name="status">1</column>
+            <column name="name">Ricardo</column>
+        </table>
+        <table name="comment">
+            <column name="id">2</column>
+            <column name="email">Ricardo.milos@wanadoo.com</column>
+            <column name="date_add">2019-10-25 18:33:29</column>
+            <column name="post_id">3</column>
+            <column name="content">Excellent !</column>
+            <column name="title">J'adore !</column>
+            <column name="status">1</column>
+            <column name="name">Ricardo</column>
+        </table>
+        <table name="comment">
+            <column name="id">3</column>
+            <column name="email">SidneyLeroux@jourrapide.com
+</column>
+            <column name="date_add">2019-10-25 18:33:30</column>
+            <column name="post_id">6</column>
+            <column name="content">J'aime !</column>
+            <column name="title">Super !</column>
+            <column name="status">1</column>
+            <column name="name">Sidney Leroux</column>
+        </table>
+        <table name="comment">
+            <column name="id">4</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:33:31</column>
+            <column name="post_id">6</column>
+            <column name="content">Extraordinaire contenu !</column>
+            <column name="title">Génialissime !</column>
+            <column name="status">1</column>
+            <column name="name">Etoile Simon</column>
+        </table>
+        <table name="comment">
+            <column name="id">6</column>
+            <column name="email">BriceVoisine@dayrep.com
+</column>
+            <column name="date_add">2019-10-25 18:34:48</column>
+            <column name="post_id">1</column>
+            <column name="content">J'apprécie énormément les récits de cet auteur.</column>
+            <column name="title">Une bonne surprise</column>
+            <column name="status">1</column>
+            <column name="name">Brice Voisine</column>
+        </table>
+        <table name="comment">
+            <column name="id">7</column>
+            <column name="email">Louis.Blais@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:34:49</column>
+            <column name="post_id">5</column>
+            <column name="content">Le contenu de cet article est tout bonnement spé-cta-cu-laire !</column>
+            <column name="title">Extraordinaire !</column>
+            <column name="status">1</column>
+            <column name="name">Louis</column>
+        </table>
+        <table name="comment">
+            <column name="id">8</column>
+            <column name="email">ricardo.milos@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:34:51</column>
+            <column name="post_id">5</column>
+            <column name="content">Trop bien ! </column>
+            <column name="title">génial </column>
+            <column name="status">1</column>
+            <column name="name">Ricardo</column>
+        </table>
+        <table name="comment">
+            <column name="id">10</column>
+            <column name="email">SlainieHétu@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:38:24</column>
+            <column name="post_id">4</column>
+            <column name="content">Je voyage à chaque nouveau chapitre !</column>
+            <column name="title">Le rêve</column>
+            <column name="status">1</column>
+            <column name="name">Slainie Hétu</column>
+        </table>
+        <table name="comment">
+            <column name="id">11</column>
+            <column name="email">Philip Marquis@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:38:52</column>
+            <column name="post_id">4</column>
+            <column name="content">J'ai hâte de lire la suite !!</column>
+            <column name="title">Super !</column>
+            <column name="status">1</column>
+            <column name="name">Philip Marquis</column>
+        </table>
+        <table name="comment">
+            <column name="id">12</column>
+            <column name="email">Pedro B. Long@wanadoo.com</column>
+            <column name="date_add">2019-10-25 18:39:00</column>
+            <column name="post_id">2</column>
+            <column name="content">Wow, cet auteur à su me transporter de part ces récits !</column>
+            <column name="title">Un voyage à chaque ligne</column>
+            <column name="status">1</column>
+            <column name="name">Pedro B. Long</column>
+        </table>
+        <table name="comment">
+            <column name="id">13</column>
+            <column name="email">Kevin S. Myron@yahoo.com</column>
+            <column name="date_add">2019-10-25 18:39:00</column>
+            <column name="post_id">2</column>
+            <column name="content">Un grand auteur ! 
+</column>
+            <column name="title">Un Auteur en devenir !</column>
+            <column name="status">1</column>
+            <column name="name">Kevin S. Myron</column>
+        </table>
+        <table name="comment">
+            <column name="id">14</column>
+            <column name="email">Pedro B. Long@wanadoo.com</column>
+            <column name="date_add">2019-10-25 18:39:00</column>
+            <column name="post_id">7</column>
+            <column name="content">Wow, cet auteur à su me transporter de part ces récits !</column>
+            <column name="title">Un voyage à chaque ligne</column>
+            <column name="status">0</column>
+            <column name="name">Pedro B. Long</column>
+        </table>
+        <table name="comment">
+            <column name="id">15</column>
+            <column name="email">v.longchamps@wanadoo.com</column>
+            <column name="date_add">2019-10-25 18:39:00</column>
+            <column name="post_id">7</column>
+            <column name="content">J'aime pas trop.. désolé.</column>
+            <column name="title">Bof..</column>
+            <column name="status">0</column>
+            <column name="name">V.longchamps</column>
+        </table>
+        <table name="comment">
+            <column name="id">16</column>
+            <column name="email">pascally@wanadoo.com</column>
+            <column name="date_add">2019-10-25 18:39:00</column>
+            <column name="post_id">8</column>
+            <column name="content">J'aurai presque envie d'y aller !</column>
+            <column name="title">Sympatique !</column>
+            <column name="status">0</column>
+            <column name="name">pascally</column>
+        </table>
+        <table name="comment">
+            <column name="id">17</column>
+            <column name="email">SlainieHétu@yahoo.fr</column>
+            <column name="date_add">2019-10-25 18:38:24</column>
+            <column name="post_id">8</column>
+            <column name="content">Je voyage à chaque nouveau chapitre !</column>
+            <column name="title">Le rêve</column>
+            <column name="status">1</column>
+            <column name="name">Slainie Hétu</column>
+        </table>
+        <table name="comment">
+            <column name="id">18</column>
+            <column name="email">ricardo.milos@yahoo.com</column>
+            <column name="date_add">2019-10-25 18:34:47</column>
+            <column name="post_id">9</column>
+            <column name="content">Trop hâte !!!</column>
+            <column name="title">vivement la suite !</column>
+            <column name="status">0</column>
+            <column name="name">Ricardo</column>
+        </table>
+        <table name="comment">
+            <column name="id">52</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-02 13:14:40</column>
+            <column name="post_id">1</column>
+            <column name="content">Tout est dans le titre !</column>
+            <column name="title">une merveille ! </column>
+            <column name="status">0</column>
+            <column name="name">Annie.B</column>
+        </table>
+        <table name="comment">
+            <column name="id">57</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-03 14:44:40</column>
+            <column name="post_id">999</column>
+            <column name="content">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="title">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="status">0</column>
+            <column name="name">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+        </table>
+        <table name="comment">
+            <column name="id">58</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-03 14:45:11</column>
+            <column name="post_id">999</column>
+            <column name="content">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="title">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="status">0</column>
+            <column name="name">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+        </table>
+        <table name="comment">
+            <column name="id">63</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-03 14:49:15</column>
+            <column name="post_id">999</column>
+            <column name="content">999</column>
+            <column name="title">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="status">0</column>
+            <column name="name">teste bon email</column>
+        </table>
+        <table name="comment">
+            <column name="id">64</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-03 14:50:47</column>
+            <column name="post_id">999</column>
+            <column name="content">999</column>
+            <column name="title">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="status">0</column>
+            <column name="name">teste bon email</column>
+        </table>
+        <table name="comment">
+            <column name="id">65</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-07 07:35:05</column>
+            <column name="post_id">99</column>
+            <column name="content">efz</column>
+            <column name="title">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="status">0</column>
+            <column name="name">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+        </table>
+        <table name="comment">
+            <column name="id">66</column>
+            <column name="email">maxime.chales@yahoo.fr</column>
+            <column name="date_add">2020-04-13 07:50:48</column>
+            <column name="post_id">9</column>
+            <column name="content">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="title">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+            <column name="status">0</column>
+            <column name="name">&lt;strong&gt;maxime&lt;/strong&gt;</column>
+        </table>
+        <table name="comment">
+            <column name="id">67</column>
+            <column name="email">maxime.chales@yahoo.fre</column>
+            <column name="date_add">2020-04-13 07:51:38</column>
+            <column name="post_id">10</column>
+            <column name="content">&amp;ée&amp;</column>
+            <column name="title">e&amp;ée&amp;ée</column>
+            <column name="status">0</column>
+            <column name="name">&amp;ée&amp;ée&amp;é</column>
+        </table>
+        <!-- Table post -->
+        <table name="post">
+            <column name="id">1</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 1</column>
+            <column name="content">Ode
+
+ Des chants, voilà toute sa vie !
+
+&lt;br&gt;
+
+ Ainsi qu'un brouillard vaporeux,
+
+ Le souffle animé de l'envie
+
+ Glissa sur son coeur généreux
+
+ Toujours sa plus chère espérance
+
+ Rêva le bonheur de la France ;
+
+&lt;br&gt;&lt;br&gt;
+
+ Toujours il respecta les lois...
+
+ Mais les haines sont implacables,
+
+ Et sur le banc des vils coupables
+
+ La vertu s'assied quelquefois.
+&lt;br&gt;&lt;br&gt;
+
+ Qu'a-t-il fait ? pourquoi le proscrire ?
+
+ Ah ! c'est encor pour des chansons :
+
+ Courage ! étouffez la satire,
+
+ Au lieu d'écouter ses leçons.
+&lt;br&gt;&lt;br&gt;
+ Quand une secte turbulente,
+
+ Levant sa tête menaçante,
+
+ Brave les décrets souverains,
+&lt;br&gt;&lt;br&gt;
+ Vous restez muets, sans vengeance,
+
+ Et vous n'usez de la puissance
+
+ Que pour combattre des refrains…</column>
+            <column name="date_add">2019-10-25 18:18:15</column>
+            <column name="date_upd">2020-01-07 10:08:16</column>
+        </table>
+        <table name="post">
+            <column name="id">2</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 2</column>
+            <column name="content">La connais-tu, Daphné, cette vieille romance
+
+ Au pied du sycomore... ou sous les mûriers blancs,
+
+ Sous l'olivier plaintif, ou les saules tremblants,
+
+ Cette chanson d'amour, qui toujours recommence ?
+&lt;br&gt;&lt;br&gt;
+ Reconnais-tu le Temple au péristyle immense,
+
+ Et les citrons amers où s'imprimaient tes dents,
+
+ Et la grotte fatale aux hôtes imprudents
+
+ Où du serpent vaincu dort la vieille semence ?
+&lt;br&gt;&lt;br&gt;
+ Sais-tu pourquoi, là-bas, le volcan s'est rouvert ?
+
+ C'est qu'un jour nous l'avions touché d'un pied agile,
+
+ Et de sa poudre au loin l'horizon s'est couvert !
+&lt;br&gt;&lt;br&gt;
+ Depuis qu'un Duc Normand brisa vos dieux d'argile,
+
+ Toujours sous le palmier du tombeau de Virgile
+
+</column>
+            <column name="date_add">2019-10-25 18:18:15</column>
+            <column name="date_upd">2020-01-07 10:06:05</column>
+        </table>
+        <table name="post">
+            <column name="id">3</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 3</column>
+            <column name="content">Le vieux père en tremblant ébranlait l'univers.
+
+ Isis, la mère enfin se leva sur sa couche,
+
+ Fit un geste de haine à son époux farouche,
+
+ Et l'ardeur d'autrefois brilla dans ses yeux verts.
+&lt;br&gt;&lt;br&gt;
+ Regardez-le ! dit-elle, il dort, ce vieux pervers,
+
+ Tous les frimas du monde ont passé par sa bouche,
+
+ Prenez garde à son pied, éteignez son oeil louche,
+
+ C'est le roi des volcans et le Dieu des hivers !
+&lt;br&gt;&lt;br&gt;
+ L'aigle a déjà passé : Napoléon m'appelle ;
+
+ J'ai revêtu pour lui la robe de Cybèle,
+
+ C'est mon époux Hermès et mon frère Osiris...&quot; ;
+&lt;br&gt;&lt;br&gt;
+ La Déesse avait fui sur sa conque dorée ;
+
+ La mer nous renvoyait son image adorée
+
+ Et les cieux rayonnaient sous l'écharpe d'Iris !</column>
+            <column name="date_add">2019-10-25 18:20:32</column>
+            <column name="date_upd">2020-01-07 10:05:09</column>
+        </table>
+        <table name="post">
+            <column name="id">4</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 4</column>
+            <column name="content">Colonne de saphir, d'arabesques brodée,
+
+Reparais ! Les ramiers s'envolent de leur nid ;
+&lt;br&gt;&lt;br&gt;
+De ton bandeau d'azur à ton pied de granit
+
+Se déroule à longs plis la pourpre de Judée.
+
+Si tu vois Bénarès, sur son fleuve accoudée,
+
+Détache avec ton arc ton corset d'or bruni
+
+Car je suis le vautour volant sur Patani,
+
+Et de blancs papillons la mer est inondée.
+&lt;br&gt;&lt;br&gt;
+Lanassa ! fais flotter ton voile sur les eaux !
+
+Livre les fleurs de pourpre au courant des ruisseaux.
+
+La neige du Cathay tombe sur l'Atlantique.
+&lt;br&gt;&lt;br&gt;
+Cependant la prêtresse au visage vermeil
+
+Est endormie encor sous l'arche du soleil,
+
+Et rien n'a dérangé le sévère portique.</column>
+            <column name="date_add">2019-10-25 18:21:30</column>
+            <column name="date_upd">2020-01-07 10:09:32</column>
+        </table>
+        <table name="post">
+            <column name="id">5</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 5</column>
+            <column name="content">Ce roc voûté par art, chef-d'oeuvre d'un autre âge,
+
+Ce roc de Tarascon hébergeait autrefois
+
+Les géants descendus des montagnes de Foix,
+&lt;br&gt;&lt;br&gt;
+Dont tant d'os excessifs rendent sûr témoignage.&quot;
+
+O seigneur Du Bartas ! Je suis de ton lignage,
+
+Moi qui soude mon vers à ton vers d'autrefois ;
+&lt;br&gt;&lt;br&gt;
+Mais les vrais descendants des vieux Comtes de Foix
+
+Ont besoin de témoins pour parler dans notre âge.
+
+J'ai passé près Salzbourg sous des rochers tremblant ;
+&lt;br&gt;&lt;br&gt;
+La Cigogne d'Autriche y nourrit les Milans,
+
+Barberousse et Richard ont sacré ce refuge.
+
+La neige règne au front de leurs pies infranchis ;
+
+Et ce sont, m'a-t-on dit, les ossements blanchis
+</column>
+            <column name="date_add">2019-10-25 18:25:24</column>
+            <column name="date_upd">2020-01-07 10:10:52</column>
+        </table>
+        <table name="post">
+            <column name="id">6</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 6</column>
+            <column name="content">Tu demandes pourquoi j'ai tant de rage au coeur
+&lt;br&gt;
+Et sur un col flexible une tête indomptée ;
+&lt;br&gt;&lt;br&gt;
+C'est que je suis issu de la race d'Antée,
+
+Je retourne les dards contre le dieu vainqueur.
+&lt;br&gt;&lt;br&gt;
+Oui, je suis de ceux-là qu'inspire le Vengeur,
+
+Il m'a marqué le front de sa lèvre irritée,
+
+Sous la pâleur d'Abel, hélas ! ensanglantée,
+
+J'ai parfois de Caïn l'implacable rougeur !
+
+Jéhovah ! le dernier, vaincu par ton génie,
+
+Qui, du fond des enfers, criait : &quot; Ô tyrannie ! &quot;
+&lt;br&gt;&lt;br&gt;
+C'est mon aïeul Bélus ou mon père Dagon...
+
+Ils m'ont plongé trois fois dans les eaux du Cocyte,
+
+Et, protégeant tout seul ma mère Amalécyte,
+
+Je ressème à ses pieds les dents du vieux dragon.</column>
+            <column name="date_add">2019-10-25 18:38:42</column>
+            <column name="date_upd">2020-01-07 10:11:47</column>
+        </table>
+        <table name="post">
+            <column name="id">7</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 7</column>
+            <column name="content">&lt;p&gt;La Treizi&amp;egrave;me revient... C'est encor la premi&amp;egrave;re ; Et c'est toujours la Seule, - ou c'est le seul moment : &lt;br /&gt;&lt;br /&gt;Car es-tu Reine, &amp;ocirc; Toi! la premi&amp;egrave;re ou derni&amp;egrave;re ? Es-tu Roi, toi le seul ou le dernier amant ? ... Aimez qui vous aima du berceau dans la bi&amp;egrave;re ; Celle que j'aimai seul m'aime encor tendrement : &lt;br /&gt;&lt;br /&gt;C'est la Mort - ou la Morte... &amp;Ocirc; d&amp;eacute;lice ! &amp;ocirc; tourment ! La rose qu'elle tient, c'est la Rose tr&amp;eacute;mi&amp;egrave;re. Sainte napolitaine aux mains pleines de feux, Rose au coeur violet, fleur de sainte Gudule, &lt;br /&gt;&lt;br /&gt;As-tu trouv&amp;eacute; ta Croix dans le d&amp;eacute;sert des cieux ? Roses blanches, tombez ! vous insultez nos Dieux, Tombez, fant&amp;ocirc;mes blancs, de votre ciel qui br&amp;ucirc;le : - La sainte de l'ab&amp;icirc;me est plus sainte &amp;agrave; mes yeux !&lt;/p&gt;</column>
+            <column name="date_add">2019-10-25 18:38:44</column>
+            <column name="date_upd">2020-03-06 17:22:53</column>
+        </table>
+        <table name="post">
+            <column name="id">8</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 8</column>
+            <column name="content">Toi, qui m'avait donné son livre du Rhin
+
+De votre amitié, maître, emportant cette preuve
+&lt;br&gt;&lt;br&gt;
+Je tiens donc sous mon bras &quot;le Rhin&quot;. - J'ai l'air d'un fleuve
+
+Et je me sens grandir par la comparaison.
+
+Mais le Fleuve sait-il lui pauvre Dieu sauvage
+&lt;br&gt;&lt;br&gt;
+Ce qui lui donne un nom, une source, un rivage,
+
+Et s'il coule pour tous quelle en est la raison.
+
+Assis au mamelon de l'immense nature,
+
+Peut-être ignore-t-il comme la créature
+&lt;br&gt;&lt;br&gt;
+D'où lui vient ce bienfait qu'il doit aux Immortels :
+
+Moi je sais que de vous, douce et sainte habitude,
+
+Me vient l'Enthousiasme et l'Amour et l'Etude,
+
+Et que mon peu de feu s'allume à vos autels.</column>
+            <column name="date_add">2019-10-25 18:38:44</column>
+            <column name="date_upd">2020-01-07 10:15:21</column>
+        </table>
+        <table name="post">
+            <column name="id">9</column>
+            <column name="user_id">1</column>
+            <column name="title">CHAPITRE 9</column>
+            <column name="content">&lt;p&gt;On se retrouve tr&amp;egrave;s prochainement pour le chapitre 9, merci pour votre patience et votre fid&amp;eacute;lit&amp;eacute;&amp;nbsp;! &lt;/p&gt;
+&lt;div class=&quot;void&quot;&gt;&amp;nbsp;&lt;/div&gt;</column>
+            <column name="date_add">2019-10-25 18:38:44</column>
+            <column name="date_upd">2020-03-09 09:33:23</column>
+        </table>
+        <!-- Table user -->
+        <table name="user">
+            <column name="id">1</column>
+            <column name="nickname">jean_forteroche</column>
+            <column name="name">Forteroche</column>
+            <column name="surname">Jean</column>
+            <column name="email">Jean_forteroche@wanadoo.com</column>
+            <column name="password">$2y$12$7P6yIqV10PPMoyuQCGTUF.4/llZO6bhEi.uNaGOGwMa975bcxxsqu</column>
+        </table>
+    </database>
+</pma_xml_export>

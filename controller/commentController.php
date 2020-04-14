@@ -39,17 +39,17 @@ class CommentController
         if (isset($_POST['submit'])) {
             $post = new Post();
             $comment = new Comment();
-            if (empty($_POST['email'])){
+            if (empty($_POST['email'])) {
                 $_SESSION['error'] = 'Veuillez insérer votre adresse e-mail.';
-            } elseif (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $_POST['email'])){
+            } elseif (!preg_match(" /^[^\W][a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\@[a-zA-Z0-9_]+(\.[a-zA-Z0-9_]+)*\.[a-zA-Z]{2,4}$/ ", $_POST['email'])) {
                 $_SESSION['error'] = 'Veuillez insérer une adresse e-mail valide.';
-            } elseif (empty($_POST['pseudo'])){
+            } elseif (empty($_POST['pseudo'])) {
                 $_SESSION['error'] = 'Veuillez insérer votre nom.';
-            } elseif (empty($_POST['title'])){
+            } elseif (empty($_POST['title'])) {
                 $_SESSION['error'] = 'Veuillez insérer votre titre.';
-            } elseif (empty($_POST['commentaire'])){
+            } elseif (empty($_POST['commentaire'])) {
                 $_SESSION['error'] = 'Veuillez insérer votre message.';
-            } elseif (empty($_POST['post_id'])){
+            } elseif (empty($_POST['post_id'])) {
                 $_SESSION['error'] = 'Merci de ne pas modifier le code.';
             } else {
                 $comment->saveComment($_POST['pseudo'], $_POST['commentaire'], $_POST['email'], $_POST['post_id'], $_POST['title']);

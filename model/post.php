@@ -11,7 +11,7 @@ class Post extends Model
      */
     public function getTitle($id)
     {
-        $data = $this->db->prepare("select title from post where id = :id");
+        $data = $this->db->prepare("SELECT title FROM `post` WHERE id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
         $data->closeCursor();
@@ -26,7 +26,7 @@ class Post extends Model
     public function getPosts()
     {
 
-        $data = $this->db->prepare("select * from post order by date_add ");
+        $data = $this->db->prepare("SELECT * FROM `post` ORDER BY date_add ");
 
         $data->execute();
         $result = $data->fetchAll();
@@ -47,7 +47,7 @@ class Post extends Model
     public function getPost($id)
     {
         //
-        $data = $this->db->prepare("SELECT * FROM post WHERE id = :id");
+        $data = $this->db->prepare("SELECT * FROM `post` WHERE id = :id");
         $data->execute([':id' => $id]);
         $result = $data->fetch(PDO::FETCH_ASSOC);
         $data->closeCursor();
@@ -60,7 +60,7 @@ class Post extends Model
      */
     public function getLastPost()
     {
-        $data = $this->db->prepare("SELECT * FROM post ORDER BY date_upd desc limit 1");
+        $data = $this->db->prepare("SELECT * FROM `post` ORDER BY date_upd desc limit 1");
         $data->execute();
         $result = $data->fetch(PDO::FETCH_ASSOC);
         $data->closeCursor();

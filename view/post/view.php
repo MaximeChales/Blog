@@ -45,7 +45,7 @@
      <div class='error'><?=$errormessage?></div>
 <!--Forumulaire permettant d'envoyer un commentaire. Relié au php et donc à la bdd grace à l'action save -->
 
-     <form name="comments" action="<?=WWW_DIR?>Comment/save" method="post">
+     <form name="comments" action="<?=WWW_DIR?>Comment/save" method="POST">
 
        <input class="email" type="text" placeholder="Entrez votre adresse email" name="email">
 

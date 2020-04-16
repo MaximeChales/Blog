@@ -22,7 +22,8 @@ class Router
             $control = new $controller();
 
             /**
-             * On éclate l'url pour en récuperer les parametres (au dessus le controlleur et plus bas l'id)
+             * On éclate l'url pour en récuperer les parametres (au dessus le controlleur et plus bas, 
+             * voit si le parametre suivant est un 'id ou une methode)
              */
             if (isset($url[1]) && !empty($url[1])) {
                 $method = explode('-', $url[1]);

@@ -43,7 +43,7 @@ class PostController
         $posts = new Post();
         $list = $posts->getPost($id);
         if (empty($list)) {
-            header('Location:' . WWW_DIR . '/view/404.php');
+            header('Location:' . APP_DIR . '/view/404.php');
         }
         $errormessage='';
         if (isset($_SESSION['error']) && !empty ($_SESSION['error'])){

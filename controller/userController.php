@@ -25,9 +25,10 @@ class UserController
         //Vérifie que les identifiants sont bons avant de refiriger vers la page admin
         $url = 'User/login';
         if (isset($_POST['connexion'])) {
-            $user = new User();
-            if ($user->checkLogin($_POST['login'], $_POST['password'])) {
-                $url = 'Admin';
+            $model = new User();
+            $user = $model->checkLogin($_POST['login'], $_POST['password']);
+            if($user && password_verify($_POST['password'], $user['password'])) {
+                    $_SESSION['is_connected'] = true;
             }
         }
         header('Location:' . WWW_DIR . $url);

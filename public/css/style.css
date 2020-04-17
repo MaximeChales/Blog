@@ -196,6 +196,12 @@ h1 {
 	margin: auto;
 }
 
+.entetepost{
+	display: flex;
+	flex-direction: row;
+	background-color: rgb(38, 97, 156);
+}
+
 .contentposts {
 	width: 100%;
 	display: flex;
@@ -228,6 +234,8 @@ h1 {
 	flex-direction: column;
 }
 
+
+
 .post-content {
 	width: auto;
 	padding: 10px;
@@ -255,6 +263,11 @@ h1 {
 	transition: 2s;
 }
 
+.auteurcomment{
+
+	margin:5px 0 5px 0;
+}
+
 h2 a {
 	text-decoration: none;
 	color: #4d4d4d;
@@ -262,7 +275,7 @@ h2 a {
 
 .content h2 {
 	text-decoration: none;
-	width: auto;
+	width: 100%;
 	padding: 15px 0 15px 7px;
 	background-color: #26619c;
 	margin-top: 0px;
@@ -290,7 +303,6 @@ h2 a {
 .auteurcomment {
 	font-size: 13px;
 }
-
 .report {
 	display: flex;
 	position: relative;
@@ -301,7 +313,7 @@ h2 a {
 }
 
 .comments .titreposteaccueil {
-	padding: 5px 7px px 7px;
+	padding: 5px 7px 0 7px;
 	color: white;
 }
 
@@ -322,6 +334,8 @@ h2 a {
 	display: block;
 	margin: auto;
 }
+
+.commenttitles{width: 100%;}
 
 .commentaires input,
 textarea {
@@ -542,9 +556,11 @@ textarea {
 .options {
 	display: flex;
 	flex-direction: row;
-	padding-right: 5px;
-	width: 60px;
+	padding-right: 10px;
+	width: 90px;
 	justify-content: space-between;
+	padding-top: 20px;
+	font-size: 13px;
 }
 
 .error{
@@ -575,6 +591,7 @@ textarea {
 .tox-tinymce {
 	width: 60%;
 	height: 300px;
+	padding-left: 10px;
 }
 
 .contentreportedcomments {
@@ -722,6 +739,11 @@ textarea {
 	.zonecentre {
 		padding-top: 20px;
 		padding-bottom: 20px;
+	}
+
+	.tox-tinymce {
+		width: 90%;
+		height: auto;
 	}
 }
 
